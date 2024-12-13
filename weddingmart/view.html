@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Wedding Mart</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/common.css">
+</head>
+<body>
+  <nav class="subNav_wrap w100">
+    <div class="subName"></div>
+    <ul class="subNav">
+      <li><a href="javascript:history.back();"><img src="./images/icon_back.png" alt="back" class="back"></a></li>
+      <li class="floatR"><a href="cart.html"><span>2</span><img src="./images/icon_cart.png" alt="cart" class="cart"></a></li>
+      <li class="navSearch floatR"><img src="./images/icon_searchW.png" alt="search" class="search"></li>
+    </ul>
+  </nav><!-- .subNav -->
+
+  <div class="viewImg w100">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/itemImg_01.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./images/itemImg_02.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./images/itemImg_03.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./images/itemImg_04.jpg" alt=""></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div><!-- .viewImg -->
+    
+  <div class="viewForm">
+    <div class="itemInfo">    
+      <div class="brandName">삼성</div>
+      <div class="itemName">QLED 4K 163cm 스탠드형</div>    
+      <div class="codeName">KQ65QT89A-S</div>
+      <div class="price rentalPrice red">월 <span class="gmsB">85,940</span> 원</div><!-- 렌탈 :: 가격 -->
+      <div class="price itemPrice red"><span class="gmsB">3,094,000</span> 원</div><!-- 구매 :: 가격 -->
+      <div class="howtoBuy">
+        <button class="howtoBtn rental active">렌탈</button><!-- 렌탈 :: 버튼 -->
+        <button class="howtoBtn buy">구매</button><!-- 구매 :: 버튼 -->    
+      </div>
+    </div>
+    <div class="deliveryInfo">
+      <table>
+        <tr><th>적립금</th><td>123,760P</td></tr>         
+        <tr><th>배송비</th><td>30,000원(설치비 별도)</td></tr>
+        <tr><th>배송정보</th><td>결제 완료 후 평균 3일 이내 출고(공휴일 제외)</td></tr>     
+      </table>    
+    </div>
+  </div><!-- .viewForm -->  
+
+  <div class="viewTab_wrap w100">
+    <ul class="viewTab">
+      <li class="active" data-tab="tab-1">DETAIL</li>
+      <li data-tab="tab-2">REVIEW (1)</li>
+      <li data-tab="tab-3">Q&A (1)</li>
+    </ul>  
+
+    <div class="tabCont_wrap">
+      <div id="tab-1" class="tab_cont active"><img src="./images/detailPage.jpg" alt=""></div>
+      
+      <div id="tab-2" class="tab_cont review">
+        <table>  
+          <!-- 상품 리뷰가 없을 때 -->
+          <!--<tr>
+            <td class="noList">
+              <img src="./images/icon_noitem.png" alt="">
+              <p>해당 상품의 리뷰가 없습니다.</p>
+            </td>
+          </tr>-->
+          <tr>
+            <td><img src="./images/prod_01.jpg" alt=""></td>
+            <td><p>구매옵션 : BLACK</p><p class="txt">배송도 빠르고 설치도 만족스럽습니다. 굳굳굳</p></td>
+            <td><span>user****</span>&emsp;<span>2020.12.01</span></td>
+          </tr>
+        </table>   
+        <!-- 상품 리뷰 클릭 했을 때 -->    
+        <div class="reviewPop">
+          <img src="./images/icon_closeL.png" alt="" class="close">
+          <img src="./images/story_02.jpg" alt="">
+          <p class="txt">배송도 빠르고 설치도 만족스럽습니다. 굳굳굳</p>
+        </div>
+        
+        <div class="page gmsL">
+          <span><img src="./images/icon_prev.png" alt=""></span>
+          <span class="active">1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span><img src="./images/icon_next.png" alt=""></span> 
+        </div>  
+      </div>
+      
+      <div id="tab-3" class="tab_cont qna">
+        <ul class="qnaSlec">
+          <li>
+            <select class="subdrop_opt">
+              <option selected="selected" value="all">전체</option>
+              <option value="prod">상품</option>
+              <option vlaue="delivery">배송</option>
+              <option value="refund">반품/환불/취소</option> 
+              <option value="etc">기타</option>
+            </select>
+          </li>
+          <li class="floatR"><button>상품문의</button></li>
+        </ul><!-- .qnaSlec -->
+        <div class="clearFix"></div>
+        <dl class="qnaList">
+          <!-- 상품 리뷰가 없을 때 -->
+          <!--<dt class="noList">
+            <img src="./images/icon_noitem.png" alt="">
+            <p>해당 상품의 문의가 없습니다.</p>  
+          </dt>-->
+          <dt>
+            <div class="stateTxt"><span>답변대기</span>&ensp;ㅣ&ensp;<span>user****</span>&ensp;ㅣ&ensp;<span>2020.12.01</span></div>
+            <div class="kindTxt"><span>배송조회가 안돼요.</span><span class="floatR"><img src="./images/icon_lock.png" alt=""></span></div>
+          </dt>
+          <!-- 비공개일 때 <dd></dd> 부분 비노출 -->
+          <!--<dd>배송조회가 안돼요.</dd>-->
+        </dl>        
+        <div class="page gmsL">
+          <span><img src="./images/icon_prev.png" alt=""></span>
+          <span class="active">1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span><img src="./images/icon_next.png" alt=""></span> 
+        </div><!-- .page -->         
+      </div>
+    </div><!-- .tabCont_wrap -->
+  </div><!-- .viewTab_wrap -->
+
+  <dl class="guide">
+    <dt>교환/반품/환불 안내<img src="./images/icon_down.png" alt="" class="floatR"></dt>
+    <dd>
+      <div>
+        <h5>배송정보</h5>
+        <p>- 상품별로 상품 특성 및 배송지에 따라 배송유형 및 소요기간이 달라집니다.</p>
+        <p>- 도서 산간 지역은 별도의 배송비와 반품비가 추가될 수 있습니다.</p>
+        <p>- 상품의 배송비는 공급업체의 정책에 따라 다르며 공휴일 및 휴일은 배송이 불가합니다.</p>
+      </div>
+      <div>
+        <h5>취소/반품/교환 안내</h5>
+        <p>- 결제완료 직후 주문취소는 "MYPAGE > 주문/배송조회 > 취소/교환/반품 신청"에서 직접 처리 가능합니다.</p>
+        <p>- 주문완료 후 재고 부족 등으로 인해 주문 취소 처리가 될 수도 있는 점 양해 부탁드립니다.</p>
+      </div>
+    </dd>
+  </dl>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'progressbar',
+      }
+    });
+  </script>
+
+  <div class="footer w100">
+    <div class="topFooter_wrap">
+      <ul>
+        <li><a href="login.html">로그아웃</a></li>
+        <li><a href="service.html">고객센터</a></li>
+        <li><a href="">PC버전</a></li>
+        <li><a href="brand.html">BRAND</a></li>
+      </ul>
+    </div>
+    <div class="bottomFooter_wrap">
+      <div class="footerLogo"><a href=""><img src="./images/logo_g.png" alt=""></a></div>
+      <div class="footerInfo"><a href="">개인정보처리방침</a>&ensp;ㅣ&ensp;<a href="">이용약관</a>&ensp;ㅣ&ensp;<a href="">입점/제휴문의</a>&ensp;ㅣ&ensp;<a href="">광고안내</a></div>
+      <div>
+        <p>웨딩마트&ensp;|&ensp;대표 : 홍길동&ensp;|&ensp;개인정보관리자 : 홍길동</p>
+        <p>사업자등록번호 : 123-45-67890 <a href="">[사업자정보확인]</a>&ensp;|&ensp;통신판매번호 : 2020-서울서초-1234호</p>
+        <p>TEL : 02-123-4567&ensp;|&ensp;FAX : 02-123-4568&ensp;|&ensp;E-Mail : <a href="mailto:">abcdefg@naver.com</a></p>
+      </div>
+    </div> 
+
+    <div class="block"></div>
+    <!-- 렌탈 :: 옵션 -->
+    <div class="rentalOpt">  
+      <div class="select_wrap">
+        <select class="period_opt">
+          <option selected="selected" value="36">렌탈기간</option>
+          <option value="48">36개월</option>
+          <option value="48">48개월</option>
+          <option vlaue="60">60개월</option>
+        </select>
+        <select class="period_opt">
+          <option selected="selected" value="36">제휴카드</option>
+          <option value="48">[KB국민제휴카드] 전월실적 100만원 이상</option>
+          <option value="48">[하나제휴카드] 전월실적 100만원 이상</option>
+          <option vlaue="60">[우리제휴카드] 전월실적 100만원 이상</option>
+        </select>
+      </div>     
+      <button>렌탈 신청</button>
+    </div>
+    <!-- 구매 :: 옵션 -->
+    <div class="buyOpt">
+      <div class="opt_wrap">   
+        <!-- sso 201207 추가 start -->               
+        <select class="subdrop_opt">
+          <option selected="selected" value="">선택옵션</option>
+          <option value="opt1">블랙</option>
+          <option vlaue="opt2">화이트</option>
+        </select>    
+        <!-- sso 201207 추가 end -->
+        <img src="./images/icon_minus-L.png" alt="" class="minus"><span>1</span><img src="./images/icon_plus-L.png" alt="" class="plus">
+      </div>   
+      <div class="btn_wrap"><button class="cartBtn">장바구니</button><button class="buyBtn">바로 구매</button></div>
+    </div>
+  </div>
+
+  <div class="search_wrap w100">
+    <ul class="searchNav">
+      <li><img src="./images/icon_back.png" alt="back" class="back"></li>
+      <li class="navSearch">
+      <form role="search">
+        <input type="text" class="formSearch" placeholder="궁금한 제품을 검색해 보세요!">
+        <button type="submit" class="btnSearch"><img src="./images/icon_searchW.png" alt=""></button>
+      </form>  
+      </li>
+    </ul>
+
+    <div class="searchForm w100">
+      <!-- noHistory -->
+      <!--<div class="noHistory">최근 검색어 내역이 없습니다.</div>-->
+      <div class="recentSearch">최근 검색어<span class="alldelBtn"><img src="./images/icon_allDel.png" alt=""></span></div>
+      <div>삼성 비스포크<span class="delBtn"><img src="./images/icon_del.png" alt=""></span></div>
+      <div>김치냉장고<span class="delBtn"><img src="./images/icon_del.png" alt=""></span></div>
+      <div>식기세척기<span class="delBtn"><img src="./images/icon_del.png" alt=""></span></div>
+    </div>
+  </div><!-- .search_wrap -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // 검색
+    $(".navSearch").click(function(){
+      $(".search_wrap").addClass("active");    
+      $("body").css("overflow-y","hidden"); 
+    });
+
+    $(".back").click(function(){
+      $(".search_wrap").removeClass("active");  
+      $("body").css("overflow-y","auto");     
+    });
+
+    $(".alldelBtn").click(function(){
+      $(".searchForm div").remove();
+    });
+
+    $(".delBtn").click(function(){
+      $(this).parent().remove();
+    });
+
+    // 렌탈/구매  
+    $(".rental").click(function(){
+      $(".rental").addClass("active"); 
+      $(".rentalPrice").css("display","block");
+      $(".rentalOpt").css("display","block");
+      $(".buy").removeClass("active"); 
+      $(".itemPrice").css("display","none");
+      $(".buyOpt").css("display","none");
+    });
+    
+    $(".buy").click(function(){
+      $(".buy").addClass("active"); 
+      $(".itemPrice").css("display","block");
+      $(".buyOpt").css("display","block");
+      $(".rental").removeClass("active"); 
+      $(".rentalPrice").css("display","none");
+      $(".rentalOpt").css("display","none");
+    });
+
+    // 렌탈 버튼    
+    $(".rentalOpt button").click(function(){
+      $(".rentalOpt .select_wrap").css("display","block");    
+      $("body").css("overflow-y","hidden");   
+      $(".block").css("display","block");   
+    });
+
+    // 구매 버튼    
+    $(".buyOpt button").click(function(){
+      $(".buyOpt .opt_wrap").css("display","block");    
+      $("body").css("overflow-y","hidden");   
+      $(".block").css("display","block");   
+    });
+
+    $(".block").click(function(){
+      $(".rentalOpt .select_wrap").css("display","none"); 
+      $(".buyOpt .opt_wrap").css("display","none");    
+      $("body").css("overflow-y","auto");   
+      $(".block").css("display","none");   
+    });
+
+    // 탭
+    $(".viewTab li").click(function(){
+      var tab_id = $(this).attr("data-tab");
+      $(".viewTab li").removeClass("active");        
+      $(".tab_cont").removeClass("active");
+
+      $(this).addClass("active");
+      $("#"+tab_id).addClass("active");
+    });
+
+    // 리뷰
+    $(".review tr").click(function(){
+      $(".reviewPop").css("display","block"); 
+      $("body").css("overflow-y","hidden");    
+      $(".block").css({"display":"block","z-index":"110"});   
+    });
+
+    $(".reviewPop .close, .block").click(function(){  /* sso 201207 수정 */
+      $(".reviewPop").css("display","none");  
+      $("body").css("overflow-y","auto");   
+      $(".block").css({"display":"none","z-index":"90"});   
+    });
+
+    // .page active
+    $(".page span").click(function(){        
+      $(".page span").removeClass("active");  
+      $(this).addClass("active");
+    });
+  });  
+
+  // 아코디언
+  $(function(){
+    $("dd").hide();
+    $("dt").click(function(){
+      if( $(this).next().css("display")=="none" ){
+        $(this).next().slideDown("fast");
+      }else{
+        $(this).next().slideUp("fast"); 
+      }
+    });
+  });
+
+  // 하단 메뉴 고정 스크롤에 따른 변경
+  $(function(){
+    var FirstScroll = 0;	
+    var prevScrollTop = $(window).scrollTop(),
+      tp = $(window).scrollTop();
+
+    $(window).scroll(function(e){
+      tp = $(this).scrollTop();
+
+      if ( tp > prevScrollTop ){
+        $(".rentalOpt, .buyOpt").css("bottom","-50px");
+      } else if( tp < prevScrollTop ) {
+        $(".rentalOpt, .buyOpt").css("bottom","0px");
+      } 
+      prevScrollTop = tp;
+    });
+  });
+</script>
+</body>
+</html>

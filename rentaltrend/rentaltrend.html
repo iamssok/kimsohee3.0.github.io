@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<title>렌탈트렌드</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<style>
+	* { margin:0; padding:0; }
+	li, ol { list-style:none; }
+
+	#allwrap { position:relative; width:100%; height:100%; }
+	#allwrap #header { position:relative; width:100%; height:330px; }
+	#allwrap #header .rolling_wrap { position:relative; width:100%; height:70px; background:#1cb7e8; }
+	#allwrap #header .rolling_wrap .swiper-container-roll { width:1200px; height:70px; margin:0 auto; overflow:hidden; }
+	#allwrap #header .topnav_wrap { position:relative; width:100%; height:40px; border-bottom:1px solid #dedede; }
+	#allwrap #header .topnav { position:relative; width:1200px; height:40px; margin:0 auto; font-size:12px; color:#777; line-height:40px; }
+	#allwrap #header .topnav ul.topnav_left li { float:left; padding:0px 12px; border-right:1px solid #dedede; }
+	#allwrap #header .topnav ul.topnav_left li:nth-child(1) { height:41px; border-left:1px solid #dedede; background:#fff; }
+	#allwrap #header .topnav ul.topnav_left li:nth-child(1) img { width:11px; height:11px; }
+	#allwrap #header .topnav ul.topnav_left li a, #allwrap #header .topnav ul.topnav_left li a:hover, #allwrap #header .topnav ul.topnav_left li a:active, #allwrap #header .topnav ul.topnav_left li a:focus, #allwrap #header .topnav ul.topnav_right li a, #allwrap #header .topnav ul.topnav_right li a:hover, #allwrap #header .topnav ul.topnav_right li a:active, #allwrap #header .topnav ul.topnav_right li a:focus { color:#777; text-decoration:none;  }
+	#allwrap #header .topnav ul.topnav_right { position:absolute; right:0; }
+	#allwrap #header .topnav ul.topnav_right li { float:left; padding:0px 4px; }
+	#allwrap #header .logo_wrap { position:relative; width:1200px; height:145px; margin:0 auto; }
+	#allwrap #header .logo_wrap ul.logo li { float:left; }
+	#allwrap #header .logo_wrap ul.logo li:nth-child(1) img { width:145px; height:60px; margin-top:42px; margin-right:50px; }
+	#allwrap #header .logo_wrap ul.logo li:nth-child(2) img { width:156px; height:36px; margin-top:54px; }
+	#allwrap #header .logo_wrap .rollingbnr_wrap { position:absolute; top:42px; right:0; width:210px; height:60px; }
+	#allwrap #header .logo_wrap .rollingbnr_wrap .swiper-container { width:210px; height:60px; }
+	#allwrap #header .logo_wrap .rollingbnr_wrap .swiper-container .swiper-button-next { width:18px; height:18px; background-size:18px 18px; background-image:url(./img/arrow_up.jpg); top:32px; right:0; }
+	#allwrap #header .logo_wrap .rollingbnr_wrap .swiper-container .swiper-button-prev { width:18px; height:18px; background-size:18px 18px; background-image:url(./img/arrow_down.jpg); top:52px; left:192px; }
+	#allwrap #header .cate_wrap { position:relative; width:1200px; height:75px; margin:0 auto; font-size:17px; line-height:75px; letter-spacing:-1px; }
+	#allwrap #header .cate_wrap ul li { float:left; }
+	#allwrap #header .cate_wrap ul li:nth-child(even) { width:147px; height:75px; text-align:center; }
+	#allwrap #header .cate_wrap ul li:nth-child(even) a { display:inline-block; width:147px; height:75px; }
+	#allwrap #header .cate_wrap ul li a, #allwrap #header .cate_wrap ul li a:hover, #allwrap #header .cate_wrap ul li a:active, #allwrap #header .cate_wrap ul li a:focus { color:#00467e; text-decoration:none; text-align:center; }
+	#allwrap #header .cate_wrap ul li.all_cate { width:200px; height:75px; background:#00467e; }
+	#allwrap #header .cate_wrap ul li.all_cate a { display:inline-block; width:200px; height:75px; color:#fff; }
+	#allwrap #header .cate_wrap ul li.all_cate a span:nth-child(1) img { width:24px; height:18px; margin-left:12px; }
+	#allwrap #header .cate_wrap ul li.all_cate a span:nth-child(3) img { width:24px; height:18px; }
+	#allwrap #header .cate_wrap ul li.event_cate { width:201px; height:75px; background:#1cb7e8; text-align:center; }
+	#allwrap #header .cate_wrap ul li.event_cate a { display:inline-block; width:201px; height:75px; color:#fff; }
+	#allwrap #header .cate_over { position:relative; top:0; left:0; width:1198px; height:560px; margin:0 auto; border:1px solid #00467e; background:#fff; z-index:10; display:none; opacity:0; transition:all 1s; }
+	#allwrap #header .cate_over ul li { float:left; width:300px; height:560px; padding-left:40px; border-left:1px solid #dedede; }
+	#allwrap #header .cate_over ul li:nth-child(1) { margin-left:40px; border-left:none; }
+	#allwrap #header .cate_over ul li h3 { display:inline-block; width:200px; margin-bottom:10px; padding:30px 0px 15px; font-size:20px; color:#222; border-bottom:1px solid #333; }
+	#allwrap #header .cate_over ul li p a { font-size:14px; color:#666; line-height:30px; text-decoration:none; }
+
+	#allwrap #mainimg_wrap { position:relative; width:1200px; height:560px; margin:0 auto 80px; }
+	#allwrap #mainimg_wrap ul li { float:left; }
+	#allwrap #mainimg_wrap ul li .slider_wrap { position:relative; width:1000px; height:560px; background:#eee; }
+	#allwrap #mainimg_wrap ul li .slider_wrap .swiper-container-slider { width:1000px; height:560px; overflow:hidden; }
+	#allwrap #mainimg_wrap ul li .slider_wrap .swiper-container-slider .swiper-button-next { background-image:url(./img/arrow_right.png); opacity:0.5; right:40px; }
+	#allwrap #mainimg_wrap ul li .slider_wrap .swiper-container-slider .swiper-button-prev { background-image:url(./img/arrow_left.png); opacity:0.5; left:40px; }
+	#allwrap #mainimg_wrap ul li .img_wrap { position:relative; width:200px; height:280px; }
+	#allwrap #mainimg_wrap ul li .img_wrap a { display:inline-block; width:200px; height:280px; }
+	#allwrap #mainimg_wrap ul li .img_wrap a:nth-child(2) { margin-top:-4px; }
+	
+	#allwrap #tab_wrap { position:relative; width:1200px; height:700px; margin:0 auto 80px; }
+	#allwrap #tab_wrap .tabs { margin-bottom:65px; }
+	#allwrap #tab_wrap .tabs li { display:inline-block; width:399px; height:58px; margin-right:-6px; }
+	#allwrap #tab_wrap .tabs li a { display:inline-block; width:399px; height:58px; border-top:1px solid #dedede; border-left:1px solid #dedede; border-bottom:1px solid #dedede; line-height:58px; }
+	#allwrap #tab_wrap .tabs li:nth-child(3) a { border-right:1px solid #dedede; }
+	#allwrap #tab_wrap .tabs a { display:inline-block; background:#f0f0f0; color:#999; text-align:center; text-decoration:none; }
+	#allwrap #tab_wrap .tabs a.active { border-top:2px solid #00467e; border-bottom:none; background:#fff; color:#000; }
+	#allwrap #tab_wrap #tab1 ul li, #allwrap #tab_wrap #tab2 ul li, #allwrap #tab_wrap #tab3 ul li { float:left; width:380px; height:570px; margin-right:27px; border:1px solid #dedede; }
+	#allwrap #tab_wrap #tab1 ul li:nth-child(3), #allwrap #tab_wrap #tab2 ul li:nth-child(3), #allwrap #tab_wrap #tab3 ul li:nth-child(3) { margin-right:0; }
+	#allwrap #tab_wrap #tab1 ul li img, #allwrap #tab_wrap #tab2 ul li img, #allwrap #tab_wrap #tab3 ul li img { padding:20px 30px 0px; }
+	#allwrap #tab_wrap #tab1 ul li p, #allwrap #tab_wrap #tab2 ul li p, #allwrap #tab_wrap #tab3 ul li p { padding:10px 30px 10px; font-size:19px; color:#000; text-align:center; letter-spacing:-1px; }
+	#allwrap #tab_wrap #tab1 ul li h3, #allwrap #tab_wrap #tab2 ul li h3, #allwrap #tab_wrap #tab3 ul li h3 { margin-bottom:20px; font-size:34px; text-align:center; letter-spacing:-1px; }
+	#allwrap #tab_wrap #tab1 ul li a, #allwrap #tab_wrap #tab2 ul li a, #allwrap #tab_wrap #tab3 ul li a { display:inline-block; width:200px; height:46px; margin-left:90px; background:#19b9e5; color:#fff; text-align:center; line-height:46px; text-decoration:none; }
+	
+	#allwrap #hot_wrap { position:relative; width:1200px; height:350px; margin:0 auto 80px; }
+	#allwrap #hot_wrap .title_wrap, #allwrap #best_wrap .title_wrap, #allwrap #md_wrap .title_wrap { position:relative; width:1200px; height:40px; margin-bottom:50px; }
+	#allwrap #hot_wrap .title_wrap .title, #allwrap #best_wrap .title_wrap .title, #allwrap #md_wrap .title_wrap .title { width:400px; height:40px; margin:0 auto; font-size:30px; font-weight:bold; color:#00467e; text-align:center; letter-spacing:-1px; }
+	#allwrap #hot_wrap .title_wrap .left_line, #allwrap #best_wrap .title_wrap .left_line, #allwrap #md_wrap .title_wrap .left_line { position:absolute; top:20px; left:0px; width:400px; height:1px; background:#00467e; }
+	#allwrap #hot_wrap .title_wrap .right_line, #allwrap #best_wrap .title_wrap .right_line, #allwrap #md_wrap .title_wrap .right_line { position:absolute; top:20px; right:0px; width:400px; height:1px; background:#00467e; }
+	#allwrap #hot_wrap ul li { float:left; width:575px; height:250px; border:1px solid #dedede; }
+	#allwrap #hot_wrap ul li:nth-child(1) { margin-right:45px; }
+	#allwrap #best_wrap, #allwrap #md_wrap { position:relative; width:1200px; height:660px; margin:0 auto 100px; }
+	#allwrap #best_wrap ul li, #allwrap #md_wrap ul li { float:left; width:380px; height:570px; margin-right:27px; border:1px solid #dedede; }
+	#allwrap #best_wrap ul li:nth-child(3), #allwrap #md_wrap ul li:nth-child(3) { margin-right:0; }
+	#allwrap #best_wrap ul li img, #allwrap #md_wrap ul li img { padding:20px 30px 0px; }
+	#allwrap #best_wrap ul li p, #allwrap #md_wrap ul li p { padding:10px 30px 10px; font-size:19px; color:#000; text-align:center; letter-spacing:-1px; }
+	#allwrap #best_wrap ul li h3, #allwrap #md_wrap ul li h3 { margin-bottom:20px; font-size:34px; text-align:center; letter-spacing:-1px; }
+	#allwrap #best_wrap ul li a, #allwrap #md_wrap ul li a { display:inline-block; width:200px; height:46px; margin-left:90px; background:#19b9e5; color:#fff; text-align:center; line-height:46px; text-decoration:none; }
+	#allwrap #best_wrap ul li a:nth-child(1) { display:inline-block; width:380px; height:570px; margin-left:0; }
+
+	#allwrap #footer_wrap { position:relative; width:100%; height:270px; border-top:2px solid #00467e; }
+	#allwrap #footer_wrap .footernav_wrap { width:100%; height:50px; border-bottom:1px solid #dedede; }
+	#allwrap #footer_wrap .footernav_wrap ul { width:1200px; height:50px; margin:0 auto; }
+	#allwrap #footer_wrap .footernav_wrap ul li { float:left; font-size:12px; color:#777; line-height:50px; }
+	#allwrap #footer_wrap .footernav_wrap ul li a { padding:0px 10px; font-size:12px; color:#777; line-height:50px; text-decoration:none; }
+	#allwrap #footer_wrap .footernav_wrap ul li:nth-child(1) a { padding-left:0; }
+	#allwrap #footer_wrap .info { width:1200px; height:220px; margin:0 auto; }
+	#allwrap #footer_wrap .info li { float:left; width:600px; padding-top:60px; font-size:11px; color:#666; line-height:16px; }
+	#allwrap #footer_wrap .info li a { font-weight:bold; color:#19b9e5; text-decoration:none; }
+	#allwrap #footer_wrap .info li:nth-child(2) { padding-top:50px; text-align:right; }
+	#allwrap #footer_wrap .info li:nth-child(2) h3 { padding:20px 0px; font-size:30px; color:#333; }
+</style>
+</head>
+<body>
+<div id="allwrap">
+	<div id="header">
+		<div class="rolling_wrap">
+			<div class="swiper-container-roll">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="./img/rolling.jpg"></div>
+					<div class="swiper-slide"><img src="./img/rolling.jpg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="topnav_wrap">
+			<div class="topnav">
+				<ul class="topnav_left">
+					<li><a href="#">쇼핑몰 즐겨찾기 <span><img src="./img/plus.png"></span></a></li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+				<ul class="topnav_right">
+					<li><a href="#">로그아웃</a></li>
+					<li>ㅣ</li>
+					<li><a href="#">정보수정</a></li>
+					<li>ㅣ</li>
+					<li><a href="#">장바구니</a></li>
+					<li>ㅣ</li>
+					<li><a href="#">주문조회</a></li>
+					<li>ㅣ</li>
+					<li><a href="#">마이페이지</a></li>
+				</ul>
+			</div><!--// .topnav //-->
+		</div><!--// .topnav_wrap //-->
+		<div class="logo_wrap">
+			<ul class="logo">
+				<li><a href="#"><img src="./img/rt_logo.png"></a></li>
+				<li><a href="#"><img src="./img/rr_logo.png"></a></li>
+			</ul>
+			<div class="rollingbnr_wrap">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="./img/rolling_02.jpg"></div>
+						<div class="swiper-slide"><img src="./img/rolling_02.jpg"></div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
+		</div><!--// .logo_wrap //-->
+		<div class="cate_wrap">
+			<ul>
+				<li class="all_cate cate_btn"><a href="#"><span><img src="./img/cate_btn.png"></span><span>&nbsp;&nbsp;전체 상품분류 </span><span><img src="./img/arrow_down.png"></span></a></li>
+				<li><a href="#">MD 강력추천</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">렌탈료 무료</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">냉장고</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">에어컨</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">세탁기</a></li>
+				<li class="event_cate"><a href="#">이벤트</a></li>
+			</ul>
+		</div><!--// .cate_wrap ---->
+		<div class="cate_over cate_btn">
+			<ul>
+				<li>
+					<h3>상품분류</h3>
+					<p><a href="#">에어컨</a></p>
+					<p><a href="#">공기청정기</a></p>
+					<p><a href="#">세탁기 / 건조기</a></p>
+					<p><a href="#">제습기</a></p>
+					<p><a href="#">냉장고</a></p>
+					<p><a href="#">김치냉장고</a></p>
+					<p><a href="#">TV</a></p>
+					<p><a href="#">주방가전</a></p>
+				</li>
+				<li>
+					<h3>고객센터</h3>
+					<p><a href="#">이용안내</a></p>
+					<p><a href="#">FAQ</a></p>
+					<p><a href="#">공지사항</a></p>
+					<p><a href="#">1:1 렌탈문의</a></p>
+				</li>
+				<li>
+					<h3>마이페이지</h3>
+					<p><a href="#">장바구니</a></p>
+					<p><a href="#">관심상품</a></p>
+					<p><a href="#">주문내역 / 배송내역</a></p>
+				</li>
+			</ul>
+		</div><!--// .cate_over //-->
+		<!--/////////////////////////////////////////////////////// category script start ///////////////////////////////////////////////////////-->
+		<script>
+			$(document).ready(function() {
+				$(".cate_btn").on({
+					mouseenter: function() {
+						$(".cate_over").css("display", "block");
+						$(".cate_over").css("opacity", "1");
+					},
+					mouseleave: function() {
+						$(".cate_over").css("display", "none");
+						$(".cate_over").css("opacity", "0");
+					}
+				});
+			});
+		</script>
+		<!--/////////////////////////////////////////////////////// category script end ///////////////////////////////////////////////////////-->
+	</div><!--// #header //-->
+	
+	<div id="mainimg_wrap">
+		<ul>
+			<li>
+				<div class="slider_wrap">
+					<div class="swiper-container-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="./img/slider_01.jpg"></div>
+							<div class="swiper-slide"><img src="./img/slider_01.jpg"></div>
+							<div class="swiper-slide"><img src="./img/slider_01.jpg"></div>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="img_wrap">
+					<a href="#"><img src="./img/banner_01.jpg"></a>
+					<a href="#"><img src="./img/banner_02.jpg"></a>
+				</div>
+			</li>
+		</ul>
+	</div><!--// #mainimg_wrap //-->	
+	<!--/////////////////////////////////////////////////////// tab script start ///////////////////////////////////////////////////////-->
+	<script>
+			$(document).ready(function(){
+				$('ul.tabs').each(function(){
+					var $active, $content, $links = $(this).find('a');
+					$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+					$active.addClass('active');
+
+					$content = $($active[0].hash);
+
+					$links.not($active).each(function () {
+						$(this.hash).hide();
+					});
+
+					$(this).on('hover', 'a', function(e){
+						$active.removeClass('active');
+						$content.hide();
+
+						$active = $(this);
+						$content = $(this.hash);
+
+						$active.addClass('active');
+						$content.show();
+
+						e.preventDefault();
+					});
+				});
+			});
+	</script>
+	<!--/////////////////////////////////////////////////////// tab script end ///////////////////////////////////////////////////////-->
+	<div id="tab_wrap">
+		<ul class='tabs'>
+			<li><a href='#tab1'>냉장고</a></li>
+			<li><a href='#tab2'>에어컨</a></li>
+			<li><a href='#tab3'>공기청정기</a></li>
+		</ul>
+		<div id='tab1'>
+			<ul>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 50,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 60,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 40,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+			</ul>
+		</div>
+		<div id='tab2'>
+			<ul>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 20,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 50,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 60,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+			</ul>
+		</div>
+		<div id='tab3'>
+			<ul>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 70,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 40,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+				<li>
+					<img src="./img/tab_prod.jpg">
+					<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+					<h3>월 50,000원</h3>
+					<a href="#">자세히 보기</a>
+				</li>
+			</ul>
+		</div>
+	</div><!--// #tab_wrap //-->
+
+	<div id="hot_wrap">
+		<div class="title_wrap">
+			<div class="title">HOT!! 신규 상품</div><div class="left_line"></div><div class="right_line"></div>
+		</div>
+		<ul>
+			<li><a href="#"><img src="./img/banner_03.jpg"></a></li>
+			<li><a href="#"><img src="./img/banner_04.jpg"></a></li>
+		</ul>
+	</div><!--// #hot_wrap //-->
+
+	<div id="best_wrap">
+		<div class="title_wrap">
+			<div class="title">베스트 추천 상품</div><div class="left_line"></div><div class="right_line"></div>
+		</div>
+		<ul>
+			<li>
+				<a href="#"><img src="./img/banner_05.jpg" style="padding:0;"></a>
+			</li>
+			<li>
+				<img src="./img/tab_prod.jpg">
+				<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+				<h3>월 50,000원</h3>
+				<a href="#">자세히 보기</a>
+			</li>
+			<li>
+				<img src="./img/tab_prod.jpg">
+				<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+				<h3>월 50,000원</h3>
+				<a href="#">자세히 보기</a> 
+			</li>
+		</ul>
+	</div><!--// #best_wrap //-->
+
+	<div id="md_wrap">
+		<div class="title_wrap">
+			<div class="title">MD 추천 상품</div><div class="left_line"></div><div class="right_line"></div>
+		</div>
+		<ul>
+			<li>
+				<img src="./img/tab_prod.jpg">
+				<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+				<h3>월 50,000원</h3>
+				<a href="#">자세히 보기</a>
+			</li>
+			<li>
+				<img src="./img/tab_prod.jpg">
+				<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+				<h3>월 50,000원</h3>
+				<a href="#">자세히 보기</a>
+			</li>
+			<li>
+				<img src="./img/tab_prod.jpg">
+				<p>대유위니아 딤채 스탠드형 냉장고 457L 디밍 화이트 (WDQ47CEGGWS)</p>
+				<h3>월 50,000원</h3>
+				<a href="#">자세히 보기</a>
+			</li>
+		</ul>
+	</div><!--// #md_wrap //-->
+
+	<div id="footer_wrap">
+		<div class="footernav_wrap">
+			<ul>
+				<li><a href="#">회사소개</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">이용약관</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">개인정보처리방침</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">이용안내</a></li>
+				<li>ㅣ</li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</div>
+		<ul class="info">
+			<li>
+				<p><strong>COMPANY</strong> : (주)리얼렌탈&nbsp;&nbsp;&nbsp;<strong>OWNER</strong> : 김연수&nbsp;&nbsp;&nbsp;<strong>CALL CENTER</strong> : 02-499-7932</p>
+				<p><strong>ADDRESS</strong> : 서울특별시 성동구 성수이로 66 (서울숲 드림타워) 1205호</p>
+				<p>개인정보관리 책임자 : shop.realrental@gmail.com&nbsp;&nbsp;&nbsp;사업자등록번호 : [251-87-01379]</p>
+				<p>통신판매업 신고번호 : 제2019-서울성동-46호 <a href="#">[사업자정보확인]</a></p>
+				<p style="padding-top:20px;">Copyright (c) 리얼렌탈 All rights reserved.</p>
+			</li>
+			<li>
+				<p style="font-size:13px; color:#333;">고객센터</p>
+				<h3 style="letter-spacing:-1px;">02-499-7932</h3>
+				<p>MON - FRI 09:30 - 18:00</p>
+				<p>SAT.SUN.HOLIDAY OFF</p>
+				<p>shop.realrental@gmail.com</p>
+			</li>
+		</ul>
+	</div><!--// #footer_wrap //-->
+</div><!--// #allwrap //-->
+<!--/////////////////////////////////////////////////////// slider script start ///////////////////////////////////////////////////////-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<script>
+	var swiper = new Swiper('.swiper-container-roll', {
+		direction: 'vertical',
+		loop: true,
+		mousewheel: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+	});
+</script>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+		direction: 'vertical',
+		loop: true,
+		mousewheel: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+</script>
+<script>
+	var swiper = new Swiper('.swiper-container-slider', {
+		loop: true,
+		autoplay: {
+			delay: 4500,
+			disableOnInteraction: false,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		//pagination: {
+			//el: '.swiper-pagination',
+			//clickable: true,
+		//},
+	});
+</script>
+<!--/////////////////////////////////////////////////////// slider script end ///////////////////////////////////////////////////////-->
+</body>
+</html>

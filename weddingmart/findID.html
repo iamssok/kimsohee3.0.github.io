@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Wedding Mart</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/common.css">
+</head>
+<body>
+  <nav class="subNav_wrap w100">
+    <div class="subName">아이디 찾기</div>
+    <ul class="subNav">
+      <li><a href="javascript:history.back();"><img src="./images/icon_back.png" alt="back" class="back"></a></li>
+    </ul>
+  </nav><!-- .subNav -->
+
+  <div class="findForm w100">  
+    <h1>아이디 찾기</h1>
+    <p>회원가입 시 등록하신 정보로<br>아이디를 확인하실 수 있습니다.</p>
+    <ul class="toWay">  
+      <li class="active" data-tab="tab-1">   
+        <span class="radio">
+          <input type="radio" id="male" name="gender" value="male" checked>
+          <label for="male"><span class="round">라디오버튼</span>휴대폰번호</label>
+        </span>
+      </li>
+      <li data-tab="tab-2">
+        <span class="radio">
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female"><span class="round">라디오버튼</span>이메일주소</label>
+        </span> 
+      </li>
+    </ul>   
+      
+    <div id="tab-1" class="tab_cont active"> 
+      <input type="text" placeholder="이름을 입력하세요.">
+      <select class="phone">
+        <option selected="selected" value="">010</option>
+        <option value="">011</option>
+        <option vlaue="">016</option>
+        <option value="">017</option> 
+      </select>
+      <input type="text" class="phone" value="">
+      <input type="text" class="phone phoneLast" value="">
+      <button onclick="location.href='compID.html'">확인</button>
+    </div>
+
+    <div id="tab-2" class="tab_cont"> 
+      <input type="text" placeholder="이름을 입력하세요.">
+      <input type="text" class="email" value=""> @ 
+      <input type="text" class="email" value="">
+      <select class="email">
+        <option selected="selected" value="">직접입력</option>
+        <option value="">naver.com</option>
+        <option vlaue="">gmail.com</option>
+        <option value="">hanmail.net</option> 
+      </select>
+      <button onclick="location.href='compID.html'">확인</button>
+    </div>
+  </div><!-- .findForm -->
+
+  <div class="footer w100">
+    <div class="topFooter_wrap">
+      <ul>
+        <li><a href="login.html">로그아웃</a></li>
+        <li><a href="service.html">고객센터</a></li>
+        <li><a href="">PC버전</a></li>
+        <li><a href="brand.html">BRAND</a></li>
+      </ul>
+    </div>
+    <div class="bottomFooter_wrap">
+      <div class="footerLogo"><a href=""><img src="./images/logo_g.png" alt=""></a></div>
+      <div class="footerInfo"><a href="">개인정보처리방침</a>&ensp;ㅣ&ensp;<a href="">이용약관</a>&ensp;ㅣ&ensp;<a href="">입점/제휴문의</a>&ensp;ㅣ&ensp;<a href="">광고안내</a></div>
+      <div>
+        <p>웨딩마트&ensp;|&ensp;대표 : 홍길동&ensp;|&ensp;개인정보관리자 : 홍길동</p>
+        <p>사업자등록번호 : 123-45-67890 <a href="">[사업자정보확인]</a>&ensp;|&ensp;통신판매번호 : 2020-서울서초-1234호</p>
+        <p>TEL : 02-123-4567&ensp;|&ensp;FAX : 02-123-4568&ensp;|&ensp;E-Mail : <a href="mailto:">abcdefg@naver.com</a></p>
+      </div>
+    </div> 
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // 탭
+      $(".toWay li").click(function(){
+        var tab_id = $(this).attr("data-tab");
+        $(".toWay li").removeClass("active");        
+        $(".tab_cont").removeClass("active");
+
+        $(this).addClass("active");
+        $("#"+tab_id).addClass("active");
+      });
+    });  
+  </script>
+</body>
+</html>

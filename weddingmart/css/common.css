@@ -1,0 +1,845 @@
+/*** 폰트 ***/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*** Reset ***/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,input,textarea,select,button{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;box-sizing:border-box}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block} 
+a,li{-webkit-tap-highlight-color:transparent;} /* sso 201125 추가 */
+ol,ul{list-style:none} 
+blockquote,q{quotes:none}
+blockquote:after,blockquote:before,q:after,q:before{content:'';content:none} 
+a{color:#535353;text-decoration:none;cursor:pointer}
+button{border:none;background:none;cursor:pointer} 
+table{width:100%;border-collapse:collapse;border-spacing:0;word-break:break-all}
+
+
+/*** Normalize ***/
+html{height:100%;font-size:62.5%;}
+body{height:100%;font:normal 1.5rem/2.2rem 'Noto Sans KR','Roboto', Sans-serif;color:#444;letter-spacing:-0.5px;word-break:keep-all;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;line-height:1;-webkit-overflow-scrolling:touch;font-smoothing:antialiased;-webkit-font-smoothing:antialiased;}
+img{vertical-align:top;}
+input[type=text]::-ms-clear{display:none}
+caption,legend,.offscreen{position:absolute!important;height:1px!important;width:1px!important;overflow:hidden!important;clip:rect(1px 1px 1px 1px)!important;clip:rect(1px,1px,1px,1px)!important}
+input[type=text]::-ms-clear{display:none}
+::-webkit-input-placeholder{font-family:'Noto Sans';font-weight:300;color:#767676;opacity:1}
+:-moz-placeholder{font-family:'Noto Sans';font-weight:300;color:#767676;opacity:1}
+::-moz-placeholder{font-family:'Noto Sans';font-weight:300;color:#767676;opacity:1}
+:-ms-input-placeholder{font-family:'Noto Sans'!important;font-weight:300!important;color:#767676!important;opacity:1}
+input[type=text]:focus::-webkit-input-placeholder{visibility:hidden}
+input[type=text]:focus:-moz-placeholder{visibility:hidden}
+input[type=text]:focus::-moz-placeholder{visibility:hidden}
+input[type=text]:focus:-ms-input-placeholder{visibility:hidden}
+​select,input[type="text"],input[type="password"],input[type="tel"],input[type="search"],input[type="number"],input[type="email"],input[type="file"] {-webkit-appearance:none;border-radius:0;}
+select,input,button{outline:none;}  /* sso 201126 추가 */
+
+
+/*** 공통 ***/
+.w100 { position:relative; width:100%; }
+.center { text-align:center; }
+.left { text-align:left; }
+.right { text-align:right; }
+.gmsL { font-family:'GmarketSansLight'; } /* sso 201125 추가 */ 
+.gmsM { font-family:'GmarketSansMedium'; }
+.gmsB { font-family:'GmarketSansBold'; }
+.green { color:#1f3937; }
+.greenL { color:#52b2ab; }
+.red { color:#ff4800 !important; }
+.dividerM { width:100%; height:1px !important; margin:25px 0 40px !important; background:#ddd; display:inline-block; }
+.dividerB { width:100%; height:1px !important; background:#ddd; } /* sso 201126 추가 */
+.pointer { cursor:pointer; }
+.floatL { float:left !important; } /* sso 201126 추가 */
+.floatR { float:right !important; }
+.clearFix { clear:both; }
+/* sso 201125 추가 start */
+.noItem { padding-top:100px; text-align:center; }
+.noItem img { width:60px; margin-bottom:15px; }
+
+.page { margin:20px 0 100px; text-align:center; }
+.page span img { width:10px; margin-top:2px; }
+.page span { margin:0 12px; font-size:13px; cursor:pointer; }
+.page span.active { font-family:'GmarketSansMedium'; color:#1f3937; }
+
+select { padding-left:4px; -webkit-appearance:none; -moz-appearance:none; appearance:none; border-radius:0; background:url('../images/icon_down.png') no-repeat 95% 50%; background-size:10px; background-color:#fff; }
+select::-ms-expend { display:none; }
+/* sso 201125 추가 end */
+/* sso 201126 추가 start */
+.chk { display:inline; }
+.chk label { padding-left:0; font-weight:300; line-height:25px; }
+input[type="checkbox"] { display:none; }
+input[type="checkbox"] + label span.rect { display:inline-block; width:22px; height:22px; margin:-2px 6px 0 0; font-size:0; vertical-align:middle; background:url('../images/chk_btn.png') no-repeat; cursor:pointer; }
+input[type="checkbox"]:checked + label span.rect { background:url('../images/chk_btn_slc.png') no-repeat; }
+/* sso 201126 추가 end */
+
+
+/* 상단 메뉴 */
+.nav ul.top_nav { width:100%; height:50px; padding:0 4%; }
+.nav ul.top_nav li { float:left; position:relative; }
+.nav ul.top_nav li img.logo { width:68px; margin-top:13px; }
+.nav ul.top_nav li img.cart { width:24px; margin-top:13px; }
+.nav ul.top_nav li span { position:absolute; top:23px; right:9px; font-family:'GmarketSansMedium'; font-size:10px; color:#1f3937; }
+.nav ul.bottom_nav { width:100%; height:40px; background:#1f3937; }
+.nav ul.bottom_nav li { float:left; width:20%; height:40px; font-family:'GmarketSansBold'; font-size:12px; text-align:center; letter-spacing:0; line-height:44px; }
+.nav ul.bottom_nav li a { color:#fff; }
+/* sso 201125 추가 start */
+.nav ul.bottom_nav li:nth-child(3) { padding-left:10px; }
+.nav ul.bottom_nav li:nth-child(4) { padding-left:30px; }
+.nav ul.bottom_nav li:nth-child(5) { padding-left:15px; }
+/* sso 201125 추가 end */
+
+
+/* 푸터 */
+.footer { /*padding-bottom:40px; 삭제*/ background:#222; } /* sso 201125 수정 */
+.footer .topFooter_wrap { width:100%; height:40px; border-bottom:1px solid #333; text-align:center; }
+.footer .topFooter_wrap ul li { float:left; width:25%; height:40px; border-right:1px solid #333; line-height:40px; }
+.footer .topFooter_wrap ul li:last-child { border-right:0; }
+.footer .topFooter_wrap ul li a { display:inline-block; width:100%; height:40px; font-weight:300; font-size:14px; color:#999; }
+.footer .bottomFooter_wrap { width:100%; padding:40px 4%; font-weight:300; font-size:14px; color:#999; } 
+.footer .bottomFooter_wrap .footerLogo img { width:80px; }
+.footer .bottomFooter_wrap .footerInfo { margin:22px 0 14px; font-size:12px; } /* sso 201125 수정 */
+.footer .bottomFooter_wrap .footerInfo a { color: #999; }
+.footer .bottomFooter_wrap p { font-size:11px; line-height:17px; } /* sso 201125 수정 */
+.footer .bottomFooter_wrap p a { color: #999; }
+
+
+/* 하단 메뉴 고정 */
+.navFix { position:fixed; bottom:0; z-index:100; width:100%; height:50px; background:#f5f5f5; transition:left .4s; }
+.navFix ul { width:100%; height:50px; }
+.navFix ul li { float:left; width:20%; height:50px; margin-top:13px; text-align:center; }
+.navFix ul li img { width:24px; }
+
+
+/* 카테고리 */ /* sso 201125 전체 수정 */
+.cate_wrap { position:fixed; top:0; left:-100%; z-index:110; width:100%; height:calc(100%); background:#fff; transition:left .4s; } /* sso 201202 수정 */
+.cate_wrap.active { left:0%; }
+.cate_wrap .cate { width:100%; padding:0 6%; background:#fff; } 
+.cate_wrap .cate .cate_close { float:right; width:20px; margin-top:34px; }
+.cate_wrap .cate div { width:100%; height:40px; font-size:16px; }
+.cate_wrap .cate div a { display:block; cursor:pointer; }
+.cate_wrap .cate dt { width:100%; height:40px; font-size:16px; cursor:pointer; }
+.cate_wrap .cate dt span { float:right; margin-top:3px; }
+.cate_wrap .cate dt span img { width:12px; margin:1px 4px 0 0; }
+.cate_wrap .cate div:nth-child(2) { margin-top:40px; }
+.cate_wrap .cate div:nth-child(3) { margin-bottom:26px; border-bottom:1px solid #ddd; }
+.cate_wrap .cate div:nth-child(3) span { float:right; margin-top:3px; font-family:'Noto Sans KR', sans-serif; font-weight:300; font-size:12px; color:#999; }
+.cate_wrap .cate .accor { display:inline-block; width:100%; margin-bottom:40px; text-align:center; }
+.cate_wrap .cate .accor ul li a { width:100%; height:36px; font-size:12px; line-height:35px; display:block; }
+.cate_wrap .cate .accor ul li { float:left; width:25%; height:36px; border-left:1px solid #eee; border-bottom:1px solid #eee; text-align:center; }
+.cate_wrap .cate .accor ul li:nth-child(1), .cate_wrap .cate .accor ul li:nth-child(2), .cate_wrap .cate .accor ul li:nth-child(3), .cate_wrap .cate .accor ul li:nth-child(4) { border-top:1px solid #eee; }
+.cate_wrap .cate .accor ul li:nth-child(4n), .cate_wrap .cate .accor ul li:last-child { border-right:1px solid #eee; }
+.cate_wrap .cate .dividerM { margin-bottom:26px; }
+
+
+/*** 메인 ***/
+.mainSlide .swiper-container .swiper-slide img { width:100%; }
+.mainSlide .swiper-pagination-bullet-active { background:#fff; }
+.mainBanner img { width:100%; }
+
+.bestSeller { padding-bottom:40px; } /* sso 201125 수정 */
+.bestSeller .best { margin:0 4%; padding-bottom:60px; } /* sso 201125 수정 */
+.bestSeller .swiper-container .swiper-slide img { width:100%; }
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction { bottom:20px; } /* sso 201125 수정 */
+.bestSeller .swiper-pagination-bullet-active { background:#1f3937; }
+
+.disp_wrap { padding-bottom:0px; }
+.disp_wrap .disp { margin:0 4%; padding-bottom:60px; } /* sso 201125 수정 */
+.disp_wrap .swiper-container .swiper-slide img { width:100%; }
+.disp_wrap .swiper-pagination-bullet-active { background:#1f3937; }
+
+.disp-L_wrap { padding-bottom:0px; }
+.disp-L_wrap .disp-L { padding:0 4% 80px; }
+.disp-L_wrap .swiper-container .swiper-slide img { width:100%; }
+
+.titleE { margin:60px 0 24px; font-family:'GmarketSansMedium'; font-size:24px; text-align:center; }
+.titleK { margin:60px 0 24px; font-size:26px; text-align:center; }
+.titleE span img { padding:1px 0 0 8px; }
+.titleK span img { padding:5px 0 0 8px; } /* sso 201125 수정 */
+
+.prodName { height:17px; margin:14px 0 4px; font-weight:300; font-size:12px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; } /* sso 201125 수정 */
+.prodPrice { margin-bottom:20px; font-family:'GmarketSansMedium'; font-size:13px; } /* sso 201125 수정 */
+.wol { font-family:'Noto Sans KR', sans-serif; font-weight:300; font-size:12px; } /* sso 201125 수정 */
+
+
+/*** 서브 ***/
+.subForm { padding:0 4%; margin-bottom:40px; }
+.subForm ul.searchResult { height:50px; margin-bottom:20px; }
+.subForm ul.searchResult li { float:left; font-weight:300; font-size:13px; color:#666; }
+.subForm ul.searchResult li:first-child { margin-top:18px; }
+.subForm ul.searchResult li:first-child span { font-size:14px; color:#1f3937; }
+.subForm ul.searchResult li:last-child select { width:90px; height:26px; margin-top:13px; border:1px solid #eee; font-size:12px; }
+
+.sub-disp { position:relative; width:100%; min-height:500px; }
+.sub-disp .dispItem { width:calc((100% - 18px) / 2); margin-right:15px; margin-bottom:30px; display:inline-block; }
+.sub-disp .dispItem:nth-child(2n) { margin-right:0; }
+.sub-disp .dispItem img { width:100%; }
+
+
+/* 서브 메뉴 */
+.subNav_wrap { border-bottom:1px solid #ddd; }
+.subNav_wrap .subName { position:absolute; width:100%; margin-top:16px; font-size:18px; text-align:center; }
+.subNav_wrap ul.subNav { width:100%; height:50px; padding:0 4%; }
+.subNav_wrap ul.subNav li { float:left; position:relative; }
+.subNav_wrap ul.subNav li h3 { text-align:center; }
+.subNav_wrap ul.subNav li img.back, .subNav_wrap .subNav li img.cart, .subNav_wrap .subNav li img.search { width:24px; margin-top:13px; }
+.subNav_wrap .subNav li img.search { margin-right:24px; }
+.subNav_wrap ul.subNav li span { position:absolute; top:23px; right:9px; font-family:'GmarketSansMedium'; font-size:10px; color:#1f3937; }
+
+
+/*** 장바구니 ***/
+.cartForm { padding:0 4%; }
+.cartForm .cartChk { margin:40px 0 15px; }
+.cartForm .cartChk div { display:inline-block; }
+
+.cart-disp { position:relative; width:100%; min-height:500px; }
+.cart-disp .cartItem { width:100%; margin-bottom:80px; border-top:1px solid #333; }
+.cart-disp .cartItem .itemChk { height:45px; padding-top:15px; }
+.cart-disp .cartItem .itemChk li, .cart-disp .cartItem .itemInfo li { float:left; }
+.cart-disp .cartItem .itemChk li button { width:60px; height:30px; margin-top:-5px; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:12px; }
+.cart-disp .cartItem .itemInfo { position:relative; display:inline-block; width:100%; padding-bottom:10px; border-bottom:1px solid #ddd; }
+.cart-disp .cartItem .itemInfo li:first-child { width:120px; margin-right:10px; }
+.cart-disp .cartItem .itemInfo li:first-child img { width:100%; }
+.cart-disp .cartItem .itemInfo li.rightSec { width:calc(100% - 130px); }
+.cart-disp .cartItem .itemInfo li .prodName { height:17px; margin:8px 0 4px; font-weight:400; font-size:14px; color:#333; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+.cart-disp .cartItem .itemInfo li .prodOpt { font-weight:300; font-size:13px; color:#999; }
+.cart-disp .cartItem .itemInfo li .prodAmount { display:inline-block; position:relative; margin:46px 0 4px; }
+.cart-disp .cartItem .itemInfo li .prodAmount img.minus { position:absolute; top:0; left:0; width:24px; }
+.cart-disp .cartItem .itemInfo li .prodAmount img.plus { position:absolute; top:0; left:46.5px; width:24px; }
+.cart-disp .cartItem .itemInfo li .prodAmount span { position:absolute; top:0; left:23px; width:24px; height:24px; border:1px solid #ddd; font-weight:300; font-size:12px; text-align:center; line-height:22px; }
+.cart-disp .cartItem .itemInfo li .prodPrice { position:relative; margin-top:50px; font-size:15px; }
+.cart-disp .cartItem .itemInfo li .prodPrice span { font-family:'Noto Sans KR', sans-serif; font-weight:300; font-size:13px; }
+.cart-disp .cartItem .totalPrice { padding-top:20px; text-align:right; }
+
+.prodOrder { text-align:right; }
+.prodOrder div { margin-bottom:15px; }
+.prodOrder div span.floatL { color:#666; }
+.prodOrder div span.gmsM { font-size:18px; }
+
+.buyNow { width:100%; height:48px; margin:40px 0 80px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; text-align:center; }
+
+
+/*** 검색 ***/
+.search_wrap { position:fixed; top:0; left:-100%; z-index:110; width:100%; height:calc(100%); background:#fff; transition:left .4s; }
+.search_wrap.active { left:0%; }
+.search_wrap ul.searchNav { width:100%; height:50px; padding:0 4%; border-bottom:1px solid #ddd; }
+.search_wrap ul.searchNav li { float:left; }
+.search_wrap ul.searchNav li:first-child img { width:24px; margin-top:13px; }
+.search_wrap ul.searchNav li.navSearch { width:calc(100% - 24px); }
+.search_wrap ul.searchNav li.navSearch { width:calc(100% - 24px); height:50px; }
+.search_wrap ul.searchNav li.navSearch .formSearch { width:calc(100% - 24px); height:48px; padding-left:15px; font-weight:300; font-size:14px; }
+.search_wrap ul.searchNav li.navSearch .btnSearch { float:right; }
+.search_wrap ul.searchNav li.navSearch .btnSearch img { width:24px; margin-top:13px; }
+
+.searchForm { width:100%; padding:0 6%; }
+.searchForm .noHistory { margin-top:30px; text-align:center; }
+.searchForm div.recentSearch { margin:30px 0 24px; font-weight:400; font-size:18px; }
+.searchForm div { position:relative; margin-bottom:18px; font-weight:300; }
+.searchForm div span { position:absolute; right:0; }
+.searchForm div span img { width:18px; }
+
+
+/*** 상품 상세 ***/
+.viewImg .swiper-container { width:100%; height:100%; }
+.viewImg .swiper-container .swiper-slide img { width:100%; }
+.viewImg .swiper-container .swiper-pagination-progressbar { width:100%; height:3px; background:#fff; }
+.viewImg .swiper-container .swiper-pagination-progressbar .swiper-pagination-progressbar-fill { background:#1f3937; }
+
+.viewForm { width:100%; padding:0 4%; }
+.viewForm .itemInfo { position:relative; width:100%; border-bottom:1px solid #ddd; }
+.viewForm .itemInfo .brandName { font-weight:500; font-size: 18px; color:#151515; }
+.viewForm .itemInfo .itemName { margin:8px 0 10px; font-weight:400; font-size: 18px; color:#151515; }
+.viewForm .itemInfo .codeName { font-weight:300; font-size: 13px; color:#999; }
+.viewForm .itemInfo .price { margin:30px 0; font-weight:300; font-size: 13px; }
+.viewForm .itemInfo .price span { font-size:24px; }
+.viewForm .itemInfo .itemPrice { display:none; }
+.viewForm .itemInfo .howtoBuy { position:absolute; bottom:25px; right:0; }
+.viewForm .itemInfo .howtoBuy .howtoBtn { width:70px; height:34px; border:1px solid #1f3937; border-radius:4px; background:#fff; font-weight:400; font-size:13px; color:#1f3937; }
+.viewForm .itemInfo .howtoBuy .howtoBtn.active { background:#1f3937; font-weight:300; color:#fff; }
+.viewForm .deliveryInfo { padding:30px 0 60px; }
+.viewForm .deliveryInfo table tr { width:100%; height:30px; font-size:13px; }
+.viewForm .deliveryInfo table tr th { width:20%; color:#151515; text-align:left; }
+.viewForm .deliveryInfo table tr td { width:80%; font-weight:300; color:#666; }
+
+.rentalOpt { position:fixed; z-index:100; bottom:0; width:100%; text-align:center; }
+.rentalOpt .select_wrap { width:100%; height:140px; padding:0 5%; background:#f5f5f5; display:none; }
+.rentalOpt .select_wrap select { width:100%; height:40px; margin:20px 0 0; padding-left:8px !important; border:none; font-weight:300; color:#151515; }
+.rentalOpt button { width:100%; height:50px; background:#1f3937; font-weight:300; font-size:16px; color:#fff; }
+.buyOpt { position:fixed; z-index:100; bottom:0; width:100%; text-align:center; display:none; }
+.buyOpt .opt_wrap { width:100%; height:140px; padding:20px 5%; background:#f5f5f5; display:none; } /* sso 201207 수정 */
+.buyOpt .opt_wrap select { width:100%; height:40px; margin-bottom:20px; padding-left:8px !important; border:none; font-weight:300; color:#151515; } /* sso 201207 추가 */
+.buyOpt .opt_wrap span { width:100%; height:40px; background:#fff; line-height:40px; display:inline-block; }
+.buyOpt .opt_wrap img.minus { position:absolute; top:80px; left:5%; height:40px; } /* sso 201207 수정 */
+.buyOpt .opt_wrap img.plus { position:absolute; top:80px; right:5%; height:40px; } /* sso 201207 수정 */
+.buyOpt .btn_wrap { width:100%; height:50px; }
+.buyOpt .btn_wrap .cartBtn { width:50%; height:50px; background:#fff; font-size:16px; color:#1f3937; }
+.buyOpt .btn_wrap .buyBtn { width:50%; height:50px; background:#1f3937; font-size:16px; color:#fff; }
+
+/* sso 201207 추가 */
+.purchaseOpt { position:fixed; z-index:100; bottom:0; width:100%; text-align:center; }
+.purchaseOpt .opt_wrap { width:100%; height:140px; padding:20px 5%; background:#f5f5f5; display:none; }
+.purchaseOpt .opt_wrap select { width:100%; height:40px; margin-bottom:20px; padding-left:8px !important; border:none; font-weight:300; color:#151515; }
+.purchaseOpt .opt_wrap span { width:100%; height:40px; background:#fff; line-height:40px; display:inline-block; }
+.purchaseOpt .opt_wrap img.minus { position:absolute; top:80px; left:5%; height:40px; }
+.purchaseOpt .opt_wrap img.plus { position:absolute; top:80px; right:5%; height:40px; }
+.purchaseOpt .btn_wrap { width:100%; height:50px; }
+.purchaseOpt .btn_wrap .cartBtn { width:50%; height:50px; background:#fff; font-size:16px; color:#1f3937; }
+.purchaseOpt .btn_wrap .buyBtn { width:50%; height:50px; background:#1f3937; font-size:16px; color:#fff; }
+
+.viewTab_wrap .viewTab { width:100%; height:50px; }
+.viewTab_wrap .viewTab li { float:left; width:33.3%; height:50px; border-top:1px solid #ddd; border-right:1px solid #ddd; border-bottom:1px solid #ddd; background:#f5f5f5; font-family:'GmarketSansMedium'; font-size:12px; color:#aaa; text-align:center; line-height:50px; cursor:pointer; }
+.viewTab_wrap .viewTab li:last-child { border-right:0; }
+.viewTab_wrap .viewTab li.active { border-bottom:none; background:#fff; color:#151515; }
+
+.viewTab_wrap .tabCont_wrap { padding-top:20px; }
+.viewTab_wrap .tabCont_wrap .tab_cont { min-height:500px; padding:0 4%; display:none; }
+.viewTab_wrap .tabCont_wrap .tab_cont.active { display:block; }
+.viewTab_wrap .tabCont_wrap .tab_cont:first-child img { width:100%; }
+.viewTab_wrap .tabCont_wrap .tab_cont .page { margin-top:40px; }
+.viewTab_wrap .tabCont_wrap .review { position:relative; }
+.viewTab_wrap .tabCont_wrap .review tr { width:100%; border-bottom:1px solid #ddd; }
+.viewTab_wrap .tabCont_wrap .review td { padding:15px 0; }
+.viewTab_wrap .tabCont_wrap .review td:nth-child(1) { width:80px; }
+.viewTab_wrap .tabCont_wrap .review td:nth-child(1) img { width:100%; }
+.viewTab_wrap .tabCont_wrap .review td:nth-child(2) { width:50%; padding-left:15px; }
+.viewTab_wrap .tabCont_wrap .review td:nth-child(3) { text-align:right; }
+.viewTab_wrap .tabCont_wrap .review td p, .viewTab_wrap .tabCont_wrap .review td span { font-weight:300; font-size:12px; color:#aaa; }
+.viewTab_wrap .tabCont_wrap .review td p.txt { margin-top:10px; font-weight:300; font-size:14px; color:#151515; line-height:16px; }
+.viewTab_wrap .tabCont_wrap .review .reviewPop { position:fixed; z-index:120; top:15%; left:4%; width:92%; padding:20px; border:1px solid #ddd; background:#fff; display:none; }
+.viewTab_wrap .tabCont_wrap .review .reviewPop img { width:100%; }
+.viewTab_wrap .tabCont_wrap .review .reviewPop img.close { float:right; width:20px; margin-bottom:20px; }
+.viewTab_wrap .tabCont_wrap .review .reviewPop .txt { margin-top:15px; font-weight:300; font-size:14px; color:#151515; line-height:16px; }
+.viewTab_wrap .tabCont_wrap .qna .qnaSlec li { float:left; }
+.viewTab_wrap .tabCont_wrap .qna .qnaSlec li select { width:90px; height:26px; border:1px solid #ddd; font-size:12px; color:#666; line-height:24px; }
+.viewTab_wrap .tabCont_wrap .qna .qnaSlec li button { width:70px; height:26px; background:#f3a14b; font-weight:300; font-size:12px; color:#fff; }
+.viewTab_wrap .tabCont_wrap .qna .qnaList { margin-top:30px; padding-bottom:20px; border-bottom:1px solid #ddd; }
+.viewTab_wrap .tabCont_wrap .qna .qnaList .stateTxt { font-weight:300; font-size:12px; color:#aaa; }
+.viewTab_wrap .tabCont_wrap .qna .qnaList .kindTxt { margin-top:15px; font-weight:300; font-size:14px; color:#151515; line-height:16px; }
+.viewTab_wrap .tabCont_wrap .qna .qnaList .kindTxt img { width:16px; }
+.viewTab_wrap .tabCont_wrap .qna .qnaList dd {  margin-top:15px; font-weight:300; font-size:13px; color:#151515; line-height:18px; }
+
+
+/* 기존 상세페이지에서 공통부분으로 추가 수정 */ /* sso 201202 추가 수정 */
+.guide dt { padding:18px 20px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; font-weight:300; font-size:14px; color:#333; }
+.guide dt img { width:14px; }
+.guide dd { padding:30px 20px 0; }
+.guide dd div h5 { margin:0 0 10px; font-size:14px; color:#333; }
+.guide dd div p { font-weight:300; font-size:12px; color:#333; line-height:20px; }
+.guide dd div p:last-child { margin-bottom:30px; }
+
+/* 공통부분에 추가 */
+.block { position:fixed; top:0; z-index:90; width:100%; height:calc(100%); background:rgba(0,0,0,.7); display:none; }
+.noList { text-align:center; }
+.noList img { width:60px !important; margin-top:100px; }
+.noList p { margin:15px 0 130px; font-size:14px !important; color:#999; }
+
+.Period { height:110px; background:#f8f8f8; }
+.Period .period_wrap { width:100%; height:110px; padding:16px 4%; }
+.Period .period_wrap .monthBtn { width:100%; margin-bottom:6px; }
+.Period .period_wrap .monthBtn button { width:calc(100% / 3); height:36px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; border-left:1px solid #ddd; background:#fff; font-size:13px; color:#666; }
+.Period .period_wrap .monthBtn button:nth-child(3) { border-right:1px solid #ddd; }
+.Period .period_wrap .dateForm { width:100%; }
+.Period .period_wrap .dateForm input[type="date"] { width:calc((100% - 98px) / 2); height:36px; padding-left:4px; border:1px solid #ddd; background:#fff; font-size:13px; color:#666; }
+.Period .period_wrap .dateForm button { width:70px; height:36px; margin-left:6px; border:1px solid #1f3937; background:#1f3937; font-weight:300; font-size:13px; color:#fff; }
+
+
+/*** 마이페이지 ***/
+.mypageForm { padding:0 4%; }
+.mypageForm ul { display:inline-block; width:100%; margin:60px 0; }
+.mypageForm ul li { float:left; }
+.mypageForm ul li img { width:60px; }
+.mypageForm ul li.myInfo { margin:9px 0 0 10px; }
+.mypageForm ul li.myInfo p:first-child { margin-bottom:8px; font-weight:500; font-size:18px; color:#151515; }
+.mypageForm ul li.myInfo p:last-child { font-weight:300; font-size:12px; color:#999; }
+.mypageForm ul li.myInfo p:last-child img { width:10px; margin-top:1.5px; }
+.mypageForm ul li.myCoupon, .mypageForm ul li.myPoint { width:120px; height:60px; padding-top:13px; border:1px solid #ddd; text-align:center; }
+.mypageForm ul li.myCoupon p, .mypageForm ul li.myPoint p { margin-bottom:9px; font-weight:300; font-size:12px; color:#999;  }
+.mypageForm ul li.myCoupon p:last-child, .mypageForm ul li.myPoint p:last-child { font-size:14px; color:#151515; }
+
+.mypageForm .myShopping, .mypageForm .myActivity { margin-bottom:70px; }
+.mypageForm .myShopping .subtitTxt, .mypageForm .myActivity .subtitTxt { padding:16px 6px; border-bottom:1px solid #333; font-weight:500; font-size:18px; color:#151515; }
+.mypageForm .myShopping div, .mypageForm .myActivity div { padding:22px 6px; border-bottom:1px solid #ddd; font-weight:300; font-size:14px; color:#333; }
+.mypageForm .myShopping div img, .mypageForm .myActivity div img { width:12px; margin-top:1.5px; }
+.mypageForm .centerSticker img { width:100%; margin-bottom:100px; }
+
+
+/*** 포인트 ***/
+.pointForm { padding:0 4%; text-align:center; }
+.pointForm p { margin:70px 0 18px; font-size:15px; color:#333; }
+.pointForm h1 { margin-bottom:30px; font-size:40px; color:#1f3937; }
+.pointForm h1 span { color:#ccc; letter-spacing:-8px; }
+.pointForm ul { display:inline-block; width:100%; margin-bottom:70px; }
+.pointForm ul li { float:left; width:50%; height:80px; border:1px solid #ddd; background:#f8f8f8; }
+.pointForm ul li:first-child { border-right:none; }
+.pointForm ul li p:first-child { margin:15px 0 15px 15px; font-size:13px; color:#999; text-align:left; }
+.pointForm ul li p:last-child { margin:22px 15px 15px 0; font-size:16px; color:#333; text-align:right; }
+
+.pointHis { margin:30px 0 80px; padding:0 4%; }
+.pointHis table tr { width:100%; border-bottom:1px solid #ddd; }
+.pointHis table tr:first-child { border-top:1px solid #333; }
+.pointHis table tr th { width:25%; padding:20px 0; font-size:13px; color:#333; }
+.pointHis table tr td { padding:20px 0; font-weight:300; font-size:12px; color:#666; }
+.pointHis .page { margin-top:80px; }
+
+
+/*** 주문/배송조회, 취소/교환/반품, 렌탈신청내역, 상품리뷰, 1:1문의 ***/
+.inquiryList { min-height:500px; margin-top:40px; padding:0 4%; }
+.inquiryList .item_wrap { margin-bottom:80px; }
+.inquiryList .orderNumber { padding:10px 0; border-bottom:1px solid #333; }
+.inquiryList .orderNumber span { font-size:13px; color:#333; }
+.inquiryList .orderInfo { width:100%; padding-bottom:20px; border-bottom:1px solid #ddd; display:inline-block; }
+.inquiryList .orderInfo li { float:left; }
+.inquiryList .orderInfo li:first-child { width:120px; margin:20px 10px 0 0; }
+.inquiryList .orderInfo li:first-child img { width:100%; }
+.inquiryList .orderInfo li:last-child { width:calc(100% - 130px); }
+.inquiryList .orderInfo li:last-child .prodName { margin:28px 0 6px; font-weight:400; font-size:14px; color:#333; }
+.inquiryList .orderInfo li:last-child .optTxt { font-weight:300; font-size:13px; color:#999; }
+.inquiryList .orderInfo li:last-child .priceAmount { margin:10px 0 30px; font-weight:300; font-size:12px; }
+.inquiryList .orderInfo li:last-child .priceAmount span { font-size:15px; }
+.inquiryList .orderInfo li:last-child .tracking { font-weight:300; font-size:13px; color:#52b2ab; }
+.inquiryList .orderInfo li:last-child .tracking button { width:60px; height:30px; margin-top:-8px; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:12px; }
+.inquiryList .btn_wrap { width:100%; padding:15px 0; border-bottom:1px solid #ddd; text-align:center; }
+.inquiryList .btn_wrap button { width:25%; height:36px; margin-right:10px; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:14px; }
+.inquiryList .btn_wrap button.writeBtn { margin-right:0; border:1px solid #1f3937; background:#1f3937; color:#fff; }
+
+
+/*** 상품리뷰 ***/
+.reviewTab li { float:left; width:50%; height:50px; border-right:1px solid #ddd; border-bottom:1px solid #ddd; background:#f5f5f5; font-size:14px; color:#aaa; text-align:center; line-height:50px; cursor:pointer; }
+.reviewTab li:last-child { border-right:0; }
+.reviewTab li.active { border-bottom:none; background:#fff; color:#151515; }
+.inquiryList .tab_cont { min-height:500px; padding-top:40px; display:none; }
+.inquiryList .tab_cont.active { display:block; }
+.inquiryList .tab_cont .myReview.active { width:100%; padding:20px 6px; border-bottom:1px solid #ddd; display:inline-block; }
+.inquiryList .tab_cont .myReview.active li { float:left; }
+.inquiryList .tab_cont .myReview.active li:first-child { width:calc(100% - 110px); margin-right:10px; }
+.inquiryList .tab_cont .myReview.active li:first-child .brandName { margin:2px 0 6px; font-weight:400; font-size:13px; color:#333; }
+.inquiryList .tab_cont .myReview.active li:first-child .prodName { margin:8px 0 6px; font-weight:400; font-size:14px; color:#333; }
+.inquiryList .tab_cont .myReview.active li:first-child .reviewTxt { height:44px; margin:20px 0 0; font-weight:300; font-size:13px; color:#666; line-height:20px; word-wrap:break-word; -webkit-line-clamp:2; -webkit-box-orient:vertical; text-overflow:ellipsis; overflow:hidden; }
+.inquiryList .tab_cont .myReview.active li:last-child { width:100px; margin-top:0; }
+.inquiryList .tab_cont .myReview.active li:last-child img { width:100%; }
+/* sso 201207 추가 */
+.inquiryList .tab_cont .myReview { width:100%; padding:20px 6px; border-bottom:1px solid #ddd; display:inline-block; }
+.inquiryList .tab_cont .myReview li { float:left; }
+.inquiryList .tab_cont .myReview li:first-child { width:100%; margin-right:10px; }
+.inquiryList .tab_cont .myReview li:first-child .brandName { margin:2px 0 6px; font-weight:400; font-size:13px; color:#333; }
+.inquiryList .tab_cont .myReview li:first-child .prodName { margin:8px 0 6px; font-weight:400; font-size:14px; color:#333; }
+.inquiryList .tab_cont .myReview li:first-child .reviewTxt { height:auto; margin:20px 0 0; font-weight:300; font-size:13px; color:#666; line-height:20px; word-wrap:break-word; -webkit-line-clamp:2; -webkit-box-orient:vertical; text-overflow:ellipsis; overflow:hidden; }
+.inquiryList .tab_cont .myReview li:last-child { width:100%; margin-top:10px; }
+.inquiryList .tab_cont .myReview li:last-child img { width:100%; }
+
+.inquiryList .reviewbtn_wrap { width:100%; padding:15px 0; border-bottom:1px solid #ddd; text-align:center; } 
+.inquiryList .reviewbtn_wrap button { width:calc((90% - 10px) /2); height:36px; margin-right:10px; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:14px; }
+.inquiryList .reviewbtn_wrap button:nth-child(2) { margin-right:0; }
+.inquiryList .reviewbtn_wrap button.writeBtn { width:90%; height:36px; margin-right:0; border:1px solid #1f3937; background:#1f3937; color:#fff; }
+
+
+/*** 1:1문의 ***/
+.consultTime { padding:40px 4%; }
+.consultTime ul { display:inline-block; width:100%; }
+.consultTime ul li { float:left; }
+.consultTime ul li p { font-size:12px; letter-spacing:0px; line-height:20px; }
+.consultTime ul li button { width:120px; height:36px; border-radius:3px; background:#1f3937; font-weight:300; font-size:14px; color:#fff; }
+
+.qnaForm { min-height:500px; padding:20px 4% 10px; background:#f5f5f5; }
+.qnaForm .qnaList li { width:100%; height:80px; margin-bottom:10px; padding:14px 12px; border:1px solid #eee; background:#fff; }
+.qnaForm .qnaList li.noList { height:auto; margin-bottom:0; border:0; }
+.qnaForm .qnaList li .subTxt { font-weight:300; font-size:12px; color:#999; }
+.qnaForm .qnaList li .subTxt img { width:48px; }
+.qnaForm .qnaList li .titTxt { margin-top:18px; }
+.qnaForm .qnaList li .titTxt span img { width:8px; margin-top:8px; }
+.qnaForm .qnaList li.noList { background:transparent; }
+
+
+/*** 리뷰 쓰기, 문의하기 ***/
+.writeForm { min-height:500px; padding:0 4%; }
+.writeForm .orderNumber { margin-top:40px; padding:10px 0; border-bottom:1px solid #333; font-size:13px; }
+.writeForm .itemInfo { width:100%; padding:20px 0; border-bottom:1px solid #ddd; display:inline-block; }
+.writeForm .itemInfo li { float:left;  } 
+.writeForm .itemInfo li img { width:100%; }
+.writeForm .itemInfo li:nth-child(1) { width:80px; margin-right:10px; }
+.writeForm .itemInfo li:nth-child(2) { width:calc(100% - 90px); }
+.writeForm .itemInfo li:nth-child(2) .brandName { margin:12px 0 0; font-weight:400; font-size:13px; color:#333; }
+.writeForm .itemInfo li:nth-child(2) .prodName { margin:6px 0; font-weight:400; font-size:14px; color:#333; }
+.writeForm .itemInfo li:nth-child(2) .optTxt { font-weight:300; font-size:13px; color:#999; }
+.writeForm .tit input { width:100%; height:60px; padding-left:5px; border-bottom:1px solid #ddd; } /* sso 201209 추가 */
+.writeForm textarea { width:100%; height:200px; padding:20px 5px; border-bottom:1px solid #ddd; line-height:20px; resize:none; outline:none; }
+.writeForm button { width:100%; height:50px; margin:40px 0 100px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; text-align:Center; }
+
+
+/*** 문의하기 ***/
+.writeForm .selection { width:100%; margin-top:40px; padding:20px 0px; border-bottom:1px solid #ddd; font-weight:300; font-size:15px; color:#333; }
+.writeForm .selection button { width:60px; height:30px; margin:-8px 0 0; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:12px; color:#000;}
+.writeForm .typeSelec { position:relative; height:60px; }
+.writeForm .typeSelec select { position:absolute; width:100%; height:60px; padding-left:5px; border-bottom:1px solid #ddd; font-weight:300; font-size:15px; color:#333; }
+.writeForm .selecPop { position:fixed; top:0; left:0; z-index:100; width:100%; height:calc(100%); background:#fff; display:none; }
+.writeForm .selecPop .titPop { width:100%; height:50px; padding-top:16px; border-bottom:1px solid #ddd; font-size:18px; text-align:center; }
+.writeForm .selecPop .titPop span { position:absolute; top:15px; right:4%; }
+.writeForm .selecPop .titPop span img { width:20px; }
+.writeForm .selecPop p.txt { padding:40px 4% 0px; font-size:14px; line-height:20px; }
+.writeForm .selecPop .itemList { width:100%; height:368px; margin-bottom:40px; overflow:hidden; }
+.writeForm .selecPop .item_wrap { margin-bottom:40px; padding:0 4%; }
+.writeForm .selecPop .item_wrap .orderNumber { padding:10px 0; border-bottom:1px solid #333; font-size:13px; }
+.writeForm .selecPop .item_wrap ul { width:100%; height:110px; border-bottom:1px solid #ddd; display:inline-block; }
+.writeForm .selecPop .item_wrap ul li { float:left; padding:15px 0; }
+.writeForm .selecPop .item_wrap ul li img { width:100%; }
+.writeForm .selecPop .item_wrap ul li:nth-child(1) { width:calc(100% - 90px); }
+.writeForm .selecPop .item_wrap ul li:nth-child(1) .brandName { margin:12px 0 0; font-weight:400; font-size:13px; color:#333; }
+.writeForm .selecPop .item_wrap ul li:nth-child(1) .prodName { height:17px; margin:6px 0; font-weight:400; font-size:14px; color:#333; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+.writeForm .selecPop .item_wrap ul li:nth-child(1) .optTxt { font-weight:300; font-size:13px; color:#999; }
+.writeForm .selecPop .item_wrap ul li:nth-child(2) { width:80px; margin-left:10px; }
+
+
+/*** 나의 문의 ***/
+.writeForm .myqna_wrap .typeSelec { padding:10px 0; border-bottom:1px solid #ddd; }
+.writeForm .typeSelec span { height:40px; padding:0 5px; font-weight:400; font-size:15px; color:#333; line-height:40px; }
+.writeForm .myqnaTxt { width:100%; padding:40px 5px; display:inline-block; }
+.writeForm .myqnaTxt li, .answerTxt li { float:left; }
+.writeForm .myqnaTxt li img, .answerTxt li img { width:100%; margin-top:3px; }
+.writeForm .myqnaTxt li:first-child, .answerTxt li:first-child { width:16px; margin-right:10px; }
+.writeForm .myqnaTxt li:last-child, .answerTxt li:last-child { width:calc(100% - 42px); }
+.writeForm .myqnaTxt li:last-child p, .answerTxt li:last-child p { line-height:22px; }
+.writeForm .myqnaTxt li:last-child img { margin-top:20px; }
+.answerTxt { width:100%; margin-bottom:100px; padding:40px 4% 40px 22px; background:#f5f5f5; display:inline-block; }
+
+
+/*** 취소/교환/반품 신청 ***/
+.refundForm { padding:0 4%; }
+.refundForm .orderNumber { margin-top:40px; padding:10px 0; border-bottom:1px solid #333; font-size:13px; }
+.refundForm .itemInfo { width:100%; padding:20px 0; border-bottom:1px solid #ddd; display:inline-block; }
+.refundForm .itemInfo li { float:left;  } 
+.refundForm .itemInfo li img { width:100%; }
+.refundForm .itemInfo li:nth-child(1) { width:80px; margin-right:10px; }
+.refundForm .itemInfo li:nth-child(2) { width:calc(100% - 90px); }
+.refundForm .itemInfo li:nth-child(2) .brandName { margin:12px 0 0; font-weight:400; font-size:13px; color:#333; }
+.refundForm .itemInfo li:nth-child(2) .prodName { margin:6px 0; font-weight:400; font-size:14px; color:#333; }
+.refundForm .itemInfo li:nth-child(2) .optTxt { font-weight:300; font-size:13px; color:#999; }
+.refundForm .selection { width:100%; margin-top:40px; padding:20px 0px; border-bottom:1px solid #ddd; font-weight:300; font-size:15px; color:#333; }
+.refundForm .selection button { width:60px; height:30px; margin:-8px 0 0; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:12px; color:#000;}
+.refundForm .typeSelec { position:relative; height:60px; }
+.refundForm .typeSelec select { position:absolute; width:100%; height:60px; padding-left:5px; border-bottom:1px solid #ddd; font-weight:300; font-size:15px; color:#333; }
+.refundForm textarea { width:100%; height:200px; padding:20px 5px; border-bottom:1px solid #ddd; line-height:20px; resize:none; outline:none; }
+.refundForm .refundInfo { margin:60px 0 10px; }
+.refundForm .refundInfo .subtitTxt { margin-top:40px; padding:16px 6px; border-bottom:1px solid #333; font-weight:500; font-size:18px; color:#151515; }
+.refundForm .refundInfo .infoTxt { padding:20px 6px; border-bottom:1px solid #ddd; font-weight:300; font-size:14px; color:#333; }
+.refundForm button { width:100%; height:50px; margin:40px 0 100px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; text-align:Center; }
+
+/* 공통 부분 */
+.upload { display:inline-block; width:100%; padding:20px 0 0; }
+.upload li { float:left; width:60px; margin-right:5px; }
+.upload li img { width:100%; }
+.upload li label { display:inline-block; font-size:inherit; line-height:normal; vertical-align:middle; } 
+.upload li label img { width:60px; }
+.upload li input[type="file"] { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+p.tip { margin-top:10px; font-weight:300; font-size:12px; color:#999; line-height:16px; }
+
+
+/*** 비말번호 확인 ***/
+.comfirmpwForm { min-height:500px; padding:140px 4%; } /* sso 201209 수정 */
+.comfirmpwForm h2 {font-weight:500; font-size:20px; text-align:center; line-height:26px; }
+.comfirmpwForm .confPw { text-align:center; }
+.comfirmpwForm .confPw input { width:90%; height:50px; margin:30px 0 8px; padding-left:6px; border:1px solid #ddd; font-weight:300; font-size:14px; }
+.comfirmpwForm .confPw button { width:90%; height:50px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; }
+
+
+/*** 회원정보관리, 회원가입 ***/
+.prog { position:relative; width:65%; margin:60px auto -10px; } /* sso 201210 추가 */
+.prog img { width:100%; } /* sso 201210 추가 */
+.memberForm { margin-bottom:100px; padding:0 4%; }
+.memberForm .subtitTxt { margin-top:40px; margin-bottom:10px; padding:16px 0px; border-bottom:1px solid #333; font-weight:500; font-size:18px; color:#151515; }
+.memberForm .infoForm { position:relative; padding:15px 0 0; }
+.memberForm .infoForm p { margin-bottom:10px; font-weight:300; font-size:12px; color:#666; }
+.memberForm .infoForm input { width:100%; height:50px; margin-bottom:5px; padding-left:8px; border:1px solid #ddd; font-size:13px; }
+.memberForm .infoForm input.three { width:calc((100% - 16px) / 3); margin-right:5px; }
+.memberForm .infoForm input.three:last-child { margin:0; }
+.memberForm .infoForm input:disabled { background:#f5f5f5; }
+.memberForm .infoForm input[type="date"] { background:#fff; }
+.memberForm .infoForm button { position:absolute; top:45px; right:8px; width:120px; height:34px; border-radius:3px; background:#f5f5f5; font-size:14px; color:#333; }
+.memberForm .infoForm select { width:calc((100% - 16px) / 3); height:50px; margin-bottom:5px; margin-right:5px; padding-left:6px; border:1px solid #ddd; font-size:13px; }
+.memberForm .infoForm select.one_opt { width:100%; }
+.memberForm .infoForm select:last-child { margin-right:0; }
+.memberForm .upload { padding-top:5px; }
+.memberForm .modify { width:100%; height:50px; margin-top:30px; border-radius:3px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; } /* sso 201210 수정 */
+
+.modifyPw_wrap { position:fixed; top:20%; left:4%; z-index:120; width:92%; height:280px; padding:20px 20px 40px; border:1px solid #ddd; background:#fff; display:none; }
+.modifyPw_wrap img { width:20px; margin-bottom:20px; }
+.modifyPw_wrap input { width:100%; height:50px; margin-bottom:5px; padding-left:6px; border:1px solid #ddd;  }
+.modifyPw_wrap button { width:100%; height:50px; margin-top:20px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; text-align:center; }
+
+/* sso 201211 추가 */
+.memberForm .selection { width:100%; margin:20px 0; padding:15px 0px; border-bottom:1px solid #ddd; font-weight:300; font-size:15px; color:#333; }
+.memberForm .selection button { width:80px; height:30px; margin:-8px 0 0; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:12px; color:#000;}
+
+.memberForm .selecPop { position:fixed; top:0; left:0; z-index:100; width:100%; height:calc(100%); background:#fff; display:none; }
+.memberForm .selecPop .titPop { width:100%; height:50px; padding-top:16px; border-bottom:1px solid #ddd; font-size:18px; text-align:center; }
+.memberForm .selecPop .titPop span { position:absolute; top:15px; right:4%; }
+.memberForm .selecPop .titPop span img { width:20px; }
+.memberForm .selecPop .search { position:relative; width:100%; height:44px; margin:40px 0 20px; padding:0 4%; }
+.memberForm .selecPop .search input.formSearch { width:100%; height:44px; padding:0 6px 2px; border-bottom:1px solid #333; }
+.memberForm .selecPop .search input::placeholder { font-weight:300; font-size:16px; color:#aaa; letter-spacing:-1px; }
+.memberForm .selecPop .search button { position:absolute; top:10px; right:calc(4% + 6px); width:24px; }
+.memberForm .selecPop .search button img {width:100%; }
+
+.memberForm .selecPop .plannerList { width:100%; margin-bottom:10px; padding:0 4%; overflow:hidden; }
+.memberForm .selecPop .plannerList .plannerInfo { width:100%; height:60px; padding:22px 4% 0; background:#f5f5f5; letter-spacing:0;}
+.memberForm .selecPop .plannerList .plannerInfo span.codeNumber { margin-top:4px; font-size:13px; }
+
+
+/* 공통부분 추가 */
+.radio { display:inline; }
+.radio label { padding-left:0; }
+input[type="radio"] { display:none; }
+input[type="radio"] + label span.round { display:inline-block; width:22px; height:22px; margin:-2px 4px 0 0; font-size:0; vertical-align:middle; background:url('../images/radio_btn.png') no-repeat; cursor:pointer; }
+input[type="radio"]:checked + label span.round { background:url('../images/radio_btn_slc.png') no-repeat; }
+
+
+/*** 이벤트 리스트 ***/
+.eventTab { position:relative; width:100%; margin-top:60px; display:inline-block; }
+.eventTab li { float:left; margin-left:20px; color:#999; }
+.eventTab li.active { padding-bottom:6px; border-bottom:2px solid #1f3937; color:#1f3937; }
+
+.eventListForm { padding:0 4%; margin:20px 0 60px; }
+.eventListForm .tab_cont { display:none; }
+.eventListForm .tab_cont.active { display:block; }
+.eventListForm .tab_cont .eventList { width:100%; margin-bottom:20px; }
+.eventListForm .tab_cont .eventList a { display:inline-block; }
+.eventListForm .tab_cont .eventList a img { width:100%; }
+.eventListForm .tab_cont .page { margin-top:40px; }
+
+
+/*** 이벤트 ***/
+.eventForm { width:100%; margin-bottom:100px; text-align:center; }
+.eventForm img { width:100%; }
+.eventForm button { width:150px; height:50px; margin-top:40px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; }
+.eventForm .snsShare { width:100%; height:70px; padding:18px 3% 0; border-top:1px solid #ddd; border-bottom:1px solid #ddd; text-align:left; }
+.eventForm .snsShare span { font-size:13px; color:#666; line-height:34px; }  
+.eventForm .snsShare a { margin-right:4px; }
+.eventForm .snsShare a img { width:34px; }
+.eventForm .snsShare a:last-child { margin-right:0; }
+
+
+/*** 브랜드 ***/
+.bestBrandForm { margin:60px 0 50px; }
+.bestBrandForm .swiper-container .swiper-wrapper { height:auto; }
+.bestBrandForm .swiper-container .swiper-wrapper .swiper-slide img { width:100%; }
+
+.brandForm { margin-bottom:80px; padding:0 4%; }
+.brandForm .abc { margin-bottom:60px; padding:0 2% 10px; border-bottom:2px solid #333; }
+.brandForm .abc span { font-size:18px; color:#ccc; line-height:28px; }
+.brandForm .abc span.active { color:#151515; }
+.brandForm .alphabet { width:100%; margin-bottom:30px; padding:0 3%; display:inline-block; }
+.brandForm .alphabet .alpTit { padding-bottom:40px; font-size:60px; color:#333; }
+.brandForm .alphabet ul { width:100%; display:inline-block; }
+.brandForm .alphabet ul li { float:left; width:50%; }
+.brandForm .alphabet ul li a { display:block; }
+.brandForm .alphabet ul li p.en { font-size:14px; color:#333; }
+.brandForm .alphabet ul li p.ko { margin:5px 0 50px; font-size:13px; color:#888; }
+
+
+/*** 로그인 ***/
+.login_wrap { width:100%; height:calc(100%); background:#1f3937; }
+.login_wrap .login { position:absolute; top:50%; left:50%; width:90%; height:480px; margin-left:-45%; margin-top:-240px; padding:60px 6%; background:#fff; text-align:center; }
+.login_wrap .login img { width:120px; }
+.login_wrap .login p { margin:10px 0 30px; font-weight:400; font-size:14px; line-height:20px; }
+.login_wrap .login input { width:100%; height:50px; margin-bottom:6px; padding-left:6px; border:1px solid #ddd; border-radius:3px; }
+.login_wrap .login .chkArea { margin-top:4px; font-weight:300; color:#666; text-align:left; }
+.login_wrap .login button { width:100%; height:50px; margin:20px 0 10px; border-radius:3px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; }
+.login_wrap .login .findJoin span { float:left; font-size:14px; }
+
+
+/*** 아이디 찾기, 비밀번호 찾기 ***/
+.findForm { padding:80px 4%; text-align:center; }
+.findForm h1 { font-weight:400; font-size:40px; color:#151515; text-align:center; }
+.findForm p { margin:10px 0 40px; font-weight:300; font-size:14px; line-height:20px; color:#151515; text-align:center; }
+.findForm .toWay { display:inline-block; margin:0 auto 20px; }
+.findForm .toWay li { float:left; }
+.findForm .toWay li:first-child { margin-right:30px; }
+.findForm .tab_cont { display:none; }
+.findForm .tab_cont.active { display:block; }
+.findForm input { width:100%; height:50px; margin-bottom:6px; padding-left:6px; border:1px solid #ddd; border-radius:3px; }
+.findForm select.phone { width:calc((100% - 16px) / 3); height:50px; margin-bottom:5px; margin-right:5px; padding-left:6px; border:1px solid #ddd; border-radius:3px; font-size:14px; }
+.findForm input.phone { width:calc((100% - 16px) / 3); margin-right:5px; }
+.findForm input.phoneLast { margin-right:0; }
+.findForm input.email { width:calc((100% - 30px) / 3); }
+.findForm select.email { width:calc((100% - 22px) / 3); height:50px; margin-left:5px; margin-bottom:5px; padding-left:6px; border:1px solid #ddd; border-radius:3px; font-size:14px; }
+.findForm button { width:100%; height:50px; margin-top:20px; border:1px solid #1f3937; border-radius:3px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; }
+.findForm button.abBtn { position:absolute; top:8px; right:8px; width:120px; height:34px; margin:0; border:0; border-radius:3px; background:#f5f5f5; font-size:14px; color:#333; }
+
+
+/*** 회원가입 완료, 아이디찾기 완료, 비밀번호찾기 완료 ***/
+.compForm { margin:80px 0 100px; padding:0 4%; text-align:center; }
+.compForm img { width:60px; margin-bottom:10px; }
+.compForm h2 { font-weight:500; font-size:24px; line-height:32px; }
+.compForm p { margin:15px 0 0; font-weight:300; font-size:14px; color:#666; line-height:20px; }
+.compForm .txtBox { width:100%; height:90px; margin:20px 0 40px; background:#f5f5f5; }
+.compForm .txtBox p { padding-top:22px; font-weight:400; font-size:16px; color:#333; line-height:24px; }
+.compForm .txtBox p.one { padding-top:34px; font-weight:400; font-size:16px; color:#333; line-height:24px; }
+.compForm button { width:100%; height:50px; margin-top:60px; border:1px solid #1f3937; border-radius:3px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; }
+.compForm button.leftBtn { width:calc((100% - 10px) / 2); height:50px; margin-top:60px; margin-right:10px; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:18px; color:#333; }
+.compForm button.rightBtn { width:calc((100% - 10px) / 2); height:50px; margin-top:60px; border:1px solid #1f3937; border-radius:3px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; }
+
+
+/*** 고객센터 ***/
+.serviceForm { padding:0 4%; } 
+.serviceForm .search { position:relative; width:100%; margin-bottom:10px; }
+.serviceForm .search input.formSearch { width:100%; height:44px; margin-top:80px; padding:0 6px 2px; border-bottom:2px solid #333; }
+.serviceForm .search input::placeholder { font-weight:500; font-size:20px; color:#aaa; letter-spacing:-1px; }
+.serviceForm .search button { position:absolute; top:84px; right:6px; width:28px; }
+.serviceForm .search button img { width:100%; }
+.serviceForm .searchWord { width:100%; height:40px; margin-bottom:60px; padding:0 2%; font-weight:100; }
+.serviceForm .searchWord span { font-weight:300; font-size:13px; color:#888; }
+.serviceForm .searchWord button { width:120px; height:36px; border-radius:3px; background:#1f3937; font-weight:300; font-size:14px; color:#fff; }
+.serviceForm img { width:50%; }
+.serviceForm .serviceCenter { width:100%; margin:20px 0 80px; padding:30px 10px 20px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; display:inline-block; }
+.serviceForm .serviceCenter li { float:left; }
+.serviceForm .serviceCenter li h1 { margin-bottom:8px; font-size:24px; color:#151515; }
+.serviceForm .serviceCenter li p { font-size:12px; color:#333; line-height:20px; letter-spacing:0px; }
+.serviceForm .serviceCenter li.floatR { width:65px; height:65px; }
+.serviceForm .serviceCenter li.floatR img { width:100%; }
+
+.faqForm { margin-bottom:100px; }
+.faqForm h1 { margin-bottom:30px; font-weight:500; font-size:26px; text-align:center; }
+.faqForm .faqTab { width:100%; border-top:10px solid #f5f5f5; border-bottom:10px solid #f5f5f5; display:inline-block; }
+.faqForm .faqTab li { float:left; width:calc(100% / 4); height:46px; border-right:1px solid #ddd; border-bottom:1px solid #ddd; font-size:13px; text-align:center; line-height:46px; }
+.faqForm .faqTab li:nth-child(1), .faqForm .faqTab li:nth-child(2), .faqForm .faqTab li:nth-child(3), .faqForm .faqTab li:nth-child(4) { border-top:1px solid #ddd; }
+.faqForm .faqTab li:nth-child(4n) { border-right:0; }
+.faqForm .tab_cont { display:none; }
+.faqForm .tab_cont.active { display:block; }
+.faqForm .tab_cont .faq dt { height:60px; padding:0 4%; border-bottom:1px solid #ddd; font-size:14px; line-height:60px; }
+.faqForm .tab_cont .faq dt img { width:14px; margin-top:23px; }
+.faqForm .tab_cont .faq dd { padding:30px 4%; border-bottom:1px solid #ddd; background:#f5f5f5; font-weight:300; font-size:13px; line-height:20px; }
+
+
+/*** 유료회원 안내 ***/ /* sso 201216 수정 */
+.benefitForm { margin:80px 0 100px; padding:0 4%; text-align:center; }
+.benefitForm div { width:100%; }
+.benefitForm div img { width:100%; }
+.benefitForm .query { margin:60px 0 30px; font-weight:400; font-size:16px; color:#151515; }
+.benefitForm button.leftBtn { width:calc((100% - 10px) / 2); height:50px; margin-right:10px; border:1px solid #ddd; border-radius:3px; background:#fff; font-weight:300; font-size:18px; color:#333; }
+.benefitForm button.rightBtn { width:calc((100% - 10px) / 2); height:50px; border:1px solid #1f3937; border-radius:3px; background:#1f3937; font-weight:300; font-size:18px; color:#fff; }
+
+
+/*** 개인정보처리방침. 이용약관 등 ***/
+.txtForm { margin:50px 0; padding:0 4%; }
+.txtForm { font-weight:300; font-size:13px; color:#333; line-height:20px; }
+.txtForm h5 { margin:30px 0 10px; font-weight:500; font-size:16px; color:#333; }
+.txtForm p { margin-top:10px; font-weight:500; font-size:13px; color:#333; }
+
+
+/*** 상품주문, 렌탈신청 ***/
+.orderForm { margin-top:40px; padding:0 4%; }
+.orderForm .info { margin-bottom:70px; padding-bottom:30px; border-bottom:1px solid #ddd; }
+.orderForm .info .subtitTxt { margin-bottom:20px; padding:16px 6px; border-bottom:1px solid #333; font-weight:500; font-size:18px; color:#151515; }
+
+.orderForm .itemInfo { padding-bottom:15px; }
+.orderForm .itemInfo ul { display:inline-block; width:100%; }
+.orderForm .itemInfo ul li { float:left; }
+.orderForm .itemInfo ul li:first-child { width:120px; margin-right:10px; }
+.orderForm .itemInfo ul li:first-child img { width:100%; }
+.orderForm .itemInfo ul li.rightSec { width:calc(100% - 130px); }
+.orderForm .itemInfo ul li.rightSec .prodName { height:17px; margin:8px 0 4px; font-weight:400; font-size:14px; color:#333; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+.orderForm .itemInfo ul li.rightSec .prodOpt { font-weight:300; font-size:13px; color:#999; }
+.orderForm .itemInfo ul li.rightSec .priceAmount { margin-top:50px; font-family:'Noto Sans KR'; font-weight:300; font-size:12px; }
+.orderForm .itemInfo ul li.rightSec .priceAmount span { font-size:15px; }
+
+.orderForm .deliveryInfo .deliveryTab { display:inline-block; }
+.orderForm .deliveryInfo .deliveryTab li { float:left; width:calc(100% / 3); height:50px; border-top:1px solid #ddd; border-right:1px solid #ddd; border-bottom:1px solid #ddd; background:#f5f5f5; font-weight:300; font-size:14px; color:#aaa; text-align:center; line-height:50px; }
+.orderForm .deliveryInfo .deliveryTab li:first-child { border-left:1px solid #ddd; }
+.orderForm .deliveryInfo .deliveryTab li.active { border-bottom:none; background:#fff; color:#151515; }
+.orderForm .deliveryInfo .deliveryTab_cont { display:none; padding:40px 4% 0;}
+.orderForm .deliveryInfo .deliveryTab_cont.active { display:block; }
+.orderForm .deliveryInfo .deliveryTab_cont p { margin-bottom:8px;  font-weight:400; color:#151515; line-height:22px; }
+.orderForm .deliveryInfo .deliveryTab_cont select.one_opt { width:100%; height:50px; margin-top:12px; padding-left:6px; border:1px solid #ddd; }
+
+.orderForm .infoForm { position:relative; padding:0 0 15px; }
+.orderForm .infoForm p { margin-bottom:10px; font-weight:300; font-size:12px; color:#666 !important; line-height:20px; }
+.orderForm .infoForm input { position:relative; width:100%; height:50px; margin-bottom:5px; padding-left:8px; border:1px solid #ddd; font-size:14px; }
+.orderForm .infoForm input.three { width:calc((100% - 16px) / 3); margin-right:4px; }
+.orderForm .infoForm input.three:last-child { margin:0; }
+.orderForm .infoForm input:disabled { background:#f5f5f5; }
+.orderForm .infoForm button { position:absolute; top:38px; right:8px; width:120px; height:34px; border-radius:3px; background:#f5f5f5; font-size:14px; color:#333; }
+.orderForm .infoForm select { width:calc((100% - 12px) / 3); height:50px; margin-right:4px; padding-left:6px; border:1px solid #ddd;  }
+.orderForm .infoForm select.one_opt { width:100%; height:50px; margin-top:0 !important; padding-left:6px; border:1px solid #ddd; }
+.orderForm .infoForm select:last-child { margin-right:0; }
+
+.orderForm .pointInfo { margin-bottom:20px; }
+.orderForm .pointInfo .subtitTxt { margin-bottom:30px; }
+.orderForm .pointInfo .points { margin-top:-10px; padding-right:8px; font-size:14px; text-align:right; }
+
+.orderForm .payInfo .payTab { display:inline-block; padding:0 0 20px; border-bottom:1px solid #ddd; }
+.orderForm .payInfo .payTab li { float:left; width:calc((100% - 10px) / 2 ); height:40px; margin-right:10px; border:1px solid #ddd; background:#fff; font-weight:300; color:#666; text-align:center; line-height:38px; }
+.orderForm .payInfo .payTab li:nth-child(1) { margin-bottom:10px; }
+.orderForm .payInfo .payTab li:nth-child(2n) { margin-right:0; }
+.orderForm .payInfo .payTab li.active { border:1px solid #1f3937; background:#1f3937; color:#fff; }
+.orderForm .payInfo .payTab_cont { display:none; padding:30px 4% 0; }
+.orderForm .payInfo .payTab_cont.active { display:block; }
+
+.orderForm .payInfo .payTab_cont .easypayTab { display:inline-block; }
+.orderForm .payInfo .payTab_cont .easypayTab li { float:left; width:calc((100% - 20px) / 3); height:34px; margin-right:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:50px; background:#fff; font-weight:300; font-size:14px; color:#666; text-align:center; line-height:30px; }
+.orderForm .payInfo .payTab_cont .easypayTab li:nth-child(3n) { margin-right:0; }
+.orderForm .payInfo .payTab_cont .easypayTab li.active { border:1px solid #1f3937; background:#1f3937; color:#fff; }
+.orderForm .payInfo .payTab_cont .easypayTab_cont { display:none; }
+.orderForm .payInfo .payTab_cont .easypayTab_cont.active { display:block; }
+.orderForm .payInfo .payTab_cont span.radio { margin-right:20px; }
+.orderForm .payInfo .payTab_cont input { width:calc((100% - 16px) / 3); height:50px; padding-left:6px; border:1px solid #ddd; }
+
+.orderForm .payInfo .cashWay { display:inline-block; } 
+.orderForm .payInfo .cashWay li { float:left; width:calc((100% - 10px) / 2); height:34px; margin-right:10px; border:1px solid #ddd; border-radius:50px; background:#fff; font-weight:300; font-size:14px; color:#666; text-align:center; line-height:30px; }
+.orderForm .payInfo .cashWay li:last-child { margin-right:0; }
+.orderForm .payInfo .cashWay li.active { border:1px solid #1f3937; background:#1f3937; color:#fff; }
+.orderForm .payInfo h3 { margin:40px 0 20px; font-weight:400; font-size:20px; }
+.orderForm .payInfo .radio label { font-weight:300; font-size:14px; }
+.orderForm .payInfo .numb_wrap { display:block; }
+.orderForm .payInfo input.numb { width:calc((100% - 15px) / 3); height:50px; margin-top:10px; margin-right:5px; }
+.orderForm .payInfo .unpublished { width:100%; margin-bottom:10px; display:block; }
+
+.orderForm .tip { margin-bottom:60px; font-weight:300; font-size:12px; color:#999; line-height:20px; }
+.orderForm .tipInner { margin:5px 0 0; font-weight:300; font-size:12px; color:#999; line-height:20px; }
+
+
+/*** 주문완료, 렌탈신청완료 ***/
+.compForm .item_wrap { width:100%; margin:60px 0; }
+.compForm .item_wrap .orderNumber { padding:10px 0; border-bottom:1px solid #333; text-align:left; }
+.compForm .item_wrap .orderInfo { width:100%; padding-bottom:10px; border-bottom:1px solid #ddd; display:inline-block; }
+.compForm .item_wrap .orderInfo li { float:left; }
+.compForm .item_wrap .orderInfo li:first-child { width:120px; margin:20px 10px 0 0; }
+.compForm .item_wrap .orderInfo li:first-child img { width:100%; }
+.compForm .item_wrap .orderInfo li:last-child { width:calc(100% - 130px); text-align:left; }
+.compForm .item_wrap .orderInfo li:last-child .prodName { margin:28px 0 6px; font-weight:400; font-size:14px; color:#333; }
+.compForm .item_wrap .orderInfo li:last-child .optTxt { margin-top:0; font-weight:300; font-size:13px; color:#999; }
+.compForm .item_wrap .orderInfo li:last-child .priceAmount { margin:42px 0 0; font-weight:300; font-size:12px; color:#444; } 
+.compForm .item_wrap .orderInfo li:last-child .priceAmount span { font-size:15px; }
+.compForm .applicant { margin-bottom:60px; }
+.compForm .applicant .subtitTxt, .compForm .delivery .subtitTxt { padding:16px 6px; border-bottom:1px solid #333; font-weight:500; font-size:18px; color:#151515; text-align:left; }
+.compForm .applicant .infoTxt, .compForm .delivery .infoTxt { padding:20px 6px; border-bottom:1px solid #ddd; font-weight:300; font-size:14px; color:#333; text-align:left; }
+.compForm .delivery { margin-bottom:0; }
+
+
+/*** 쿠폰 ***/
+.couponForm { min-height:500px; padding-bottom:100px; background:#f3f3f3; }
+.couponForm .myCoupon { padding:40px 4% 12px; }
+.couponForm .couponList { width:100%; padding:0 4%; }
+.couponForm .couponList .coupon { width:100%; height:180px; margin-bottom:10px; padding:20px 5%; background:#fff; }
+.couponForm .couponList .coupon .remaining { font-weight:400; font-size:13px; color:#aaa; }
+.couponForm .couponList .coupon .couponName { margin:20px 0 10px; font-size:16px; }
+.couponForm .couponList .coupon .sale span { font-size:30px; color:#151515; }
+.couponForm .couponList .coupon .dividerM { margin:20px 0 !important; }
+.couponForm .couponList .coupon .date { font-size:14px; letter-spacing:0px; }
+.couponForm .couponList .coupon .free { font-weight:500; font-size:26px; color:#151515; }
